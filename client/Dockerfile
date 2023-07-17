@@ -14,7 +14,6 @@ COPY ./package*.json ./
 RUN npm install
 COPY ./ .
 RUN npm run build
-RUN mv .next /app/client/.next
 
 # For serving the built app
 FROM node:18-alpine
