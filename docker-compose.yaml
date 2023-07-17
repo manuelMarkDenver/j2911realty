@@ -3,14 +3,14 @@ services:
   client:
     build:
       context: ./client
-      dockerfile: ./client/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - 3000:3000
     volumes:
       - ./client:/app/client
     restart: unless-stopped
     env_file: ./client/.env.local
-    
+
   # nginx:
   #   depends_on:
   #     - client
