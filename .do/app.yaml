@@ -1,0 +1,30 @@
+name: j2911realty-app
+services:
+  - name: client
+    git:
+      repo: manuelMarkDenver/j2911realty
+      branch: main
+    http_port: 3000
+    volumes:
+      - path: /app
+        source: client
+    routes:
+      - path: /
+        service: client
+    dockerfile_path: Dockerfile
+
+  - name: nginx
+    git:
+      repo: manuelMarkDenver/j2911realty
+      branch: main
+    http_port: 80
+    dockerfile_path: Dockerfile
+    depends_on:
+      - client
+    volumes:
+      - path: /etc/nginx/nginx.conf
+        source: nginx-conf
+
+volumes:
+  - name: client
+  - name: nginx-conf
