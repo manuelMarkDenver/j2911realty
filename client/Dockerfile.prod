@@ -1,19 +1,8 @@
-# For the Next.js app
+# For the Next.js app in development
 FROM node:18-alpine
-
 WORKDIR /app/client
-
-# Copy only the package.json and package-lock.json to leverage Docker layer caching
-COPY package*.json ./
-
-# Install production dependencies
-RUN npm ci --only=production
-
-# Copy the rest of the application code
-COPY . .
-
-# Expose the desired port (default is 3000 for Next.js)
+COPY ./package*.json ./
+RUN npm install
+COPY ./ .
 EXPOSE 3000
-
-# Start the Next.js application
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

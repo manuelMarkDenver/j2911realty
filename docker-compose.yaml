@@ -10,6 +10,7 @@ services:
       - ./client:/app/client
     restart: unless-stopped
     env_file: ./client/.env.local
+    
   nginx:
     depends_on:
       - client
