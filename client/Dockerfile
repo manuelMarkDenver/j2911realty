@@ -1,4 +1,13 @@
-# For the Next.js app in production
+# For the Next.js app in development
+FROM node:18-alpine as dev
+WORKDIR /app/client
+COPY ./package*.json ./
+RUN npm install
+COPY ./ .
+EXPOSE 3000
+CMD ["npm", "run", "dev"]
+
+# For the production build
 FROM node:18-alpine as builder
 WORKDIR /app/client
 COPY ./package*.json ./
