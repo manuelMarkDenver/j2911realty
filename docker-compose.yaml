@@ -7,7 +7,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./client:/app
+      - ./client:/app/client
     restart: unless-stopped
     env_file: ./client/.env.local
     
