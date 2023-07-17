@@ -1,0 +1,11 @@
+name: sample-monorepo
+
+static_sites:
+- name: client
+  github:
+    repo: manuelMarkDenver/j2911realty
+    branch: main
+    deploy_on_push: true
+  source_dir: client
+  routes:
+  - path: /
