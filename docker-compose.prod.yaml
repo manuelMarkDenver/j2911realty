@@ -1,6 +1,6 @@
 version: "3"
 services:
-  nextjs:
+  client:
     build:
       context: ./client
       dockerfile: Dockerfile.prod
@@ -10,6 +10,18 @@ services:
       - ./client:/app
     restart: unless-stopped
     env_file: ./client/.env.local
+
+  nginx:
+    depends_on:
+      - client
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
 #   strapi:
 #     container_name: strapi
 #     build:
