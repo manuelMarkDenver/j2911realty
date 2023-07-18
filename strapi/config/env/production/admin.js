@@ -10,5 +10,5 @@ module.exports = ({ env }) => ({
       salt: env('TRANSFER_TOKEN_SALT'),
     },
   },
-  url: env('APP_STRAPI_ADMIN_URL')
+  url: '/admin'
 });
