@@ -26,7 +26,7 @@ services:
     container_name: strapi
     build:
       context: ./strapi
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - 1337:1337
     image: strapi:latest
