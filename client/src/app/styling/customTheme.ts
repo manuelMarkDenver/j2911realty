@@ -4,10 +4,10 @@ const customTheme = createTheme({
   // Define your custom theme variables here
   palette: {
     primary: {
-      main: "#ff0000",
+      main: "#E4E1DD",
     },
     secondary: {
-      main: "#00ff00",
+      main: "#F8F9F4",
     },
   },
   // Other theme configurations if needed
