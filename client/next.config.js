@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
-  // Use the CDN in production and localhost for development.
-  assetPrefix: isProd ? 'https://j2911realty-k7b8l.ondigitalocean.app' : undefined,
-}
+  reactStrictMode: true,
+  output: "export",
+  distDir: "_static",
+  images: {
+    unoptimized: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
