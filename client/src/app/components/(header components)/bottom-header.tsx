@@ -11,11 +11,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import TopHeader from "./top-header";
 import { useTheme } from "@mui/material";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "About Us", "Pricing", "Contact Us"];
 
 function BottomHeader() {
   const theme = useTheme();
