@@ -1,16 +1,13 @@
+'use client'
+
 import { CssBaseline } from "@mui/material";
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import Header from "./components/header";
 import Footer from "./components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "J2911 Realty",
-  description: "J2911 Realty Website",
-};
+import "./globals.css";
+import { ThemeProvider } from "@emotion/react";
+import customTheme from "./styling/customTheme";
 
 export default function RootLayout({
   children,
@@ -19,11 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <CssBaseline />
-        <Header />
-        {children}
-        <Footer />
+      <body>
+        <ThemeProvider theme={customTheme}>
+          <CssBaseline />
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

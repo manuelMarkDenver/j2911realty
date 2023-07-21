@@ -11,7 +11,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { useTheme } from "@mui/material";
+import { Stack, useTheme } from "@mui/material";
+import Image from "next/image";
 
 const pages = ["Home", "About Us", "Pricing", "Contact Us"];
 
@@ -19,14 +20,13 @@ function BottomHeader() {
   const theme = useTheme();
 
   const secondaryColor = theme.palette.secondary.main;
-  
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
-
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -48,21 +48,28 @@ function BottomHeader() {
       <Container maxWidth="xl">
         {/* <TopHeader /> */}
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            J2911 Realty
-          </Typography>
+          <Stack direction="row" alignItems="center">
+            <Image
+              src="/assets/images/site-logo.png"
+              alt="header site logo"
+              width={150}
+              height={150}
+            />
+            <Typography
+              variant="h5"
+              component="h1"
+              noWrap
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontWeight: 700,
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              J2911 Realty
+            </Typography>
+          </Stack>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -130,7 +137,12 @@ function BottomHeader() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "black",
+                  display: "block",
+                  fontSize: "1.2rem",
+                }}
               >
                 {page}
               </Button>

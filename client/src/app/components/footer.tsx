@@ -22,6 +22,16 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
+// const customFontFamily = ["Times New Roman", "Sans serif"];
+
+// const CustomTypography = styled(Typography)({
+//   fontFamily: customFontFamily,
+// });
+
+// const CustomTextField = styled(TextField)({
+//   fontFamily: customFontFamily,
+// });
+
 const CustomGridItem: any = styled(Grid)({
   display: "flex",
   alignItems: "start",
@@ -48,11 +58,8 @@ const StyledButton = styled(Button)({
 });
 
 const Footer = () => {
-  const secondaryColor = "#E4E1DD";
-
   return (
     <Box
-      sx={{ backgroundColor: secondaryColor }}
       className="h-screen flex items-center justify-center"
     >
       <Container maxWidth="xl">
@@ -108,7 +115,7 @@ const Footer = () => {
                   },
                 }}
               >
-                Home
+                <Typography>Home</Typography>
               </Button>
               <Button
                 variant="text"
@@ -120,7 +127,7 @@ const Footer = () => {
                   },
                 }}
               >
-                About Us
+                <Typography>About Us</Typography>
               </Button>
               <Button
                 variant="text"
@@ -132,7 +139,7 @@ const Footer = () => {
                   },
                 }}
               >
-                Pricing
+                <Typography>Pricing</Typography>
               </Button>
               <Button
                 variant="text"
@@ -144,7 +151,7 @@ const Footer = () => {
                   },
                 }}
               >
-                Contact Us
+                <Typography>Contact Us</Typography>
               </Button>
             </Stack>
           </CustomGridItem>
@@ -185,7 +192,7 @@ const Footer = () => {
                 <StyledTextareaAutosize minRows={5} placeholder="Message" />
               </Stack>
               <StyledButton variant="contained" startIcon={<SendIcon />}>
-                Send
+                <Typography>Send</Typography>
               </StyledButton>
             </Stack>
           </CustomGridItem>
