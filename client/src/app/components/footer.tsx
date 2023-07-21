@@ -21,6 +21,7 @@ import TextareaAutosize from "@mui/base/TextareaAutosize";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useIsMobile } from "../lib/helpers";
 
 // const customFontFamily = ["Times New Roman", "Sans serif"];
 
@@ -60,7 +61,10 @@ const StyledButton = styled(Button)({
 const Footer = () => {
   return (
     <Box
-      className="h-screen flex items-center justify-center"
+      className={`${
+        !useIsMobile ? "h-screen py-28" : "h-full py-20"
+      } flex items-center justify-center`}
+      sx={{ backgroundColor: "#bdb9b3" }}
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
@@ -70,18 +74,21 @@ const Footer = () => {
                 src="/assets/images/site-logo.png"
                 alt="site logo"
                 width={240}
-                height={240}
+                height={150}
               />
-              <Typography variant="h6">J2911 Realty</Typography>
-              <Typography className="text-slate-500">
+              <Typography variant="h6" className="text-slate-100">
+                J2911 Realty
+              </Typography>
+              <Typography className="text-slate-100">
                 Kulas Light, Apt. 556
               </Typography>
-              <Typography className="text-slate-500">Gwenborough</Typography>
-              <Typography className="text-slate-500">92998-3874</Typography>
+              <Typography className="text-slate-100">Gwenborough</Typography>
+              <Typography className="text-slate-100">92998-3874</Typography>
               <a href="mailto:test@j2911realty.com">
                 <Typography
-                  className="text-blue-400 italic"
+                  className="text-blue-800 italic"
                   sx={{
+                    textDecoration: "none",
                     "&:hover": {
                       cursor: "pointer",
                     },
@@ -115,7 +122,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography>Home</Typography>
+                <Typography className="text-slate-100">Home</Typography>
               </Button>
               <Button
                 variant="text"
@@ -127,7 +134,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography>About Us</Typography>
+                <Typography className="text-slate-100">About Us</Typography>
               </Button>
               <Button
                 variant="text"
@@ -139,7 +146,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography>Pricing</Typography>
+                <Typography className="text-slate-100">Pricing</Typography>
               </Button>
               <Button
                 variant="text"
@@ -151,7 +158,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography>Contact Us</Typography>
+                <Typography className="text-slate-100">Contact Us</Typography>
               </Button>
             </Stack>
           </CustomGridItem>
@@ -160,12 +167,16 @@ const Footer = () => {
               <Typography
                 sx={{ marginBottom: "30px" }}
                 align="left"
-                className="text-slate-700"
+                className="text-slate-100"
               >
                 Send us a message.
               </Typography>
               <Stack gap={2}>
                 <TextField
+                  sx={{
+                    backgroundColor: "white",
+                    color: "white"
+                  }}
                   id="input-with-icon-textfield"
                   label="Name"
                   InputProps={{
@@ -178,6 +189,9 @@ const Footer = () => {
                   variant="filled"
                 />
                 <TextField
+                  sx={{
+                    backgroundColor: "white"
+                  }}
                   id="input-with-icon-textfield"
                   label="Email"
                   InputProps={{

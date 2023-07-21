@@ -1,13 +1,15 @@
 "use client";
 
-import { Box, Button, Stack, Typography, styled } from "@mui/material";
-import { useMediaQuery, useTheme } from "@mui/material";
-
-const useIsMobile = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  return isMobile;
-};
+import {
+  Box,
+  Button,
+  Stack,
+  Typography,
+  styled,
+  useTheme,
+} from "@mui/material";
+import { useIsMobile } from "../lib/helpers";
+import BottomHeader from "../components/(header components)/bottom-header";
 
 const CustomButton = styled(Button)({
   width: "300px",
@@ -23,8 +25,10 @@ const CustomButton = styled(Button)({
 });
 
 const Banner = () => {
+  const theme = useTheme();
+
   return (
-    <Box className="relative h-screen">
+    <Box className="relative h-screen z-0">
       <img
         src="/assets/images/banner-img-3.jpg"
         alt="Background Image"
@@ -39,9 +43,9 @@ const Banner = () => {
         >
           <Typography
             component="h5"
-            className="text-slate-200"
             sx={{
               fontSize: !useIsMobile() ? "2rem" : "1rem",
+              color: theme.palette.primary.main,
             }}
           >
             A Home That Reflects Your Tastes
@@ -49,15 +53,18 @@ const Banner = () => {
           <Typography
             component="h1"
             sx={{
+              color: theme.palette.primary.main,
               fontSize: !useIsMobile() ? "5rem" : "2.5rem",
               mb: "40px",
             }}
-            className="text-slate-200"
           >
             Design The Home
             <br /> of Your <span className="italic">Dreams</span>
           </Typography>
-          <CustomButton variant="contained" size={!useIsMobile() ? "large" : "small"}>
+          <CustomButton
+            variant="contained"
+            size={!useIsMobile() ? "large" : "small"}
+          >
             Book With Us
           </CustomButton>
         </Stack>

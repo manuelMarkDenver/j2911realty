@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Banner from "./(homepage)/banner";
 import Features from './(homepage)/features';
+import MissionVision from './(homepage)/mission-vision';
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Banner />
       <Features />
+      <MissionVision />
     </>
   );
 }

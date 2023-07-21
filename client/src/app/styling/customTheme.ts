@@ -14,7 +14,19 @@ const customTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Times New Roman, sans-serif", // Replace 'Your-Desired-Font-Family' with your preferred font family name
+    fontFamily: [
+      "Times New Roman",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
   },
   // Other theme configurations if needed
 });

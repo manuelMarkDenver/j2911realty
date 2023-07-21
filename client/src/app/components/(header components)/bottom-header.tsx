@@ -46,32 +46,41 @@ function BottomHeader() {
   return (
     <AppBar position="static" sx={{ backgroundColor: secondaryColor }}>
       <Container maxWidth="xl">
-        {/* <TopHeader /> */}
         <Toolbar disableGutters>
-          <Stack direction="row" alignItems="center">
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             <Image
               src="/assets/images/site-logo.png"
               alt="header site logo"
               width={150}
-              height={150}
+              height={100}
+              className="my-3"
             />
-            <Typography
+            {/* <Typography
               variant="h5"
               component="h1"
               noWrap
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
-                fontWeight: 700,
                 color: "inherit",
                 textDecoration: "none",
               }}
             >
               J2911 Realty
-            </Typography>
-          </Stack>
+            </Typography> */}
+          </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "space-between",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -82,6 +91,13 @@ function BottomHeader() {
             >
               <MenuIcon />
             </IconButton>
+            <Image
+              src="/assets/images/site-logo.png"
+              alt="header site logo"
+              width={80}
+              height={50}
+              className="my-3 md:flex"
+            />
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -110,7 +126,7 @@ function BottomHeader() {
             </Menu>
           </Box>
 
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -118,14 +134,13 @@ function BottomHeader() {
             sx={{
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontWeight: 400,
               color: "inherit",
               textDecoration: "none",
               fontSize: "1.2rem",
             }}
           >
             J2911 Realty
-          </Typography>
+          </Typography> */}
           <Box
             sx={{
               flexGrow: 1,
@@ -141,7 +156,7 @@ function BottomHeader() {
                   my: 2,
                   color: "black",
                   display: "block",
-                  fontSize: "1.2rem",
+                  fontSize: "1.1rem",
                 }}
               >
                 {page}
