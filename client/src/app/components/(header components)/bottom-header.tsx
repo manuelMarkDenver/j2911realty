@@ -13,8 +13,14 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Stack, useTheme } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
-const pages = ["Home", "About Us", "Pricing", "Contact Us"];
+const pages = [
+  { text: "Home", path: "/" },
+  { text: "About Us", path: "/about" },
+  { text: "Pricing", path: "/pricing" },
+  { text: "Contact Us", path: "/contact" },
+];
 
 function BottomHeader() {
   const theme = useTheme();
@@ -52,26 +58,15 @@ function BottomHeader() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            <Image
-              src="/assets/images/site-logo.png"
-              alt="header site logo"
-              width={150}
-              height={100}
-              className="my-3"
-            />
-            {/* <Typography
-              variant="h5"
-              component="h1"
-              noWrap
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              J2911 Realty
-            </Typography> */}
+            <Link href="/">
+              <Image
+                src="/assets/images/site-logo.png"
+                alt="header site logo"
+                width={150}
+                height={100}
+                className="my-3"
+              />
+            </Link>
           </Box>
 
           <Box
@@ -116,11 +111,16 @@ function BottomHeader() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ color: "black" }}>
-                    {page}
-                  </Typography>
+              {pages.map((page, index) => (
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
+                  <Link
+                    href={page?.path}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <Typography textAlign="center" sx={{ color: "black" }}>
+                      {page?.text}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -148,19 +148,24 @@ function BottomHeader() {
               justifyContent: "flex-end",
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontSize: "1.1rem",
-                }}
+            {pages?.map((page, index) => (
+              <Link
+                href={page?.path}
+                style={{ textDecoration: "none", color: "black" }}
               >
-                {page}
-              </Button>
+                <Button
+                  key={index}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                    fontSize: "1.1rem",
+                  }}
+                >
+                  {page?.text}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

@@ -40,7 +40,7 @@ const Banner = () => {
           direction="column"
           className="text-white p-8 text-center"
           alignItems="center"
-        >
+        >   
           <Typography
             component="h5"
             sx={{
@@ -48,7 +48,7 @@ const Banner = () => {
               color: theme.palette.primary.main,
             }}
           >
-            A Home That Reflects Your Tastes
+            Interior Design
           </Typography>
           <Typography
             component="h1"
@@ -56,10 +56,10 @@ const Banner = () => {
               color: theme.palette.primary.main,
               fontSize: !useIsMobile() ? "5rem" : "2.5rem",
               mb: "40px",
+              fontStyle: "italic"
             }}
           >
-            Design The Home
-            <br /> of Your <span className="italic">Dreams</span>
+            Beauty Is In The Details
           </Typography>
           <CustomButton
             variant="contained"

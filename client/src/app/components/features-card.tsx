@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Card,
   CardActionArea,
@@ -10,6 +12,7 @@ type CardProps = {
   img: string;
   title: string;
   description: string;
+  link?: string | any;
 };
 
 const FeaturesCard = (props: CardProps) => {
@@ -20,6 +23,10 @@ const FeaturesCard = (props: CardProps) => {
         justifyContent: "space-between",
         width: { xs: "100%", md: "90%" },
         height: "100%",
+        transition: "box-shadow 0.5s ease",
+        "&:hover": {
+          boxShadow: "0 0 10px #ed4b82",
+        },
       }}
     >
       <CardActionArea>
@@ -27,16 +34,21 @@ const FeaturesCard = (props: CardProps) => {
           component="img"
           height="300"
           image={props?.img}
-          alt="green iguana"
+          alt="Kitchen Designs"
         />
-        <CardContent className="text-center" sx={{ py: "50px" }}>
-          <Typography gutterBottom variant="h5" component="div">
-            {props?.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props?.description}
-          </Typography>
-        </CardContent>
+        <Link href={props.link} style={{ textDecoration: "none" }}>
+          <CardContent
+            className="text-center"
+            sx={{ py: "50px", color: "black" }}
+          >
+            <Typography gutterBottom variant="h5" component="div">
+              {props?.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {props?.description}
+            </Typography>
+          </CardContent>
+        </Link>
       </CardActionArea>
     </Card>
   );
