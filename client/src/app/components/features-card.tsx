@@ -17,7 +17,7 @@ type CardProps = {
 
 const FeaturesCard = (props: CardProps) => {
   return (
-    <Link href={props.link} style={{ width: "100%" }}>
+    <Link href={props.link} style={{ width: "100%", textDecoration: "none" }}>
       <Card
         sx={{
           display: "flex",
