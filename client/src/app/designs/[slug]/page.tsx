@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import MasonryImages from "./components/masonry-images";
 import { getFoldersromDOSpaces } from "@/app/lib/s3/getFoldersFromDOSpaces";
 
+// Opt out of caching for all data requests in the route segment
+
 export const metadata: Metadata = {
   title: "J2911 - Designs",
   description:

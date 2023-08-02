@@ -79,8 +79,8 @@ services:
 #   strapi-data:
 
 # networks:
-#   strapi:
-#     name: Strapi
+#   j2911-realty:
+#     # name: Strapi
 #     driver: bridge
 
 # nginx:
