@@ -82,10 +82,10 @@ services:
 # volumes:
 #   strapi-data:
 
-# networks:
-#   strapi:
-#     name: Strapi
-#     driver: bridge
+networks:
+  j2911-realty:
+    # name: Strapi
+    driver: bridge
 
 # nginx:
 #     container_name: nginx
