@@ -4,14 +4,8 @@ const nextConfig = {
   // output: 'export',
   // distDir: '_static',
   images: {
-    domains: [
-      "http://128.199.156.22/",
-      "128.199.156.22",
-      "localhost",
-      "localhost:3000",
-    ],
+    domains: ["128.199.156.22", "localhost"],
   },
 };
 
 module.exports = nextConfig;
-  
