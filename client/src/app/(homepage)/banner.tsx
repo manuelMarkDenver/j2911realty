@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 
 import {
   Box,
@@ -9,7 +10,8 @@ import {
   useTheme,
 } from "@mui/material";
 import { useIsMobile } from "../lib/helpers";
-import BottomHeader from "../components/(header components)/bottom-header";
+
+import banner from '../../../public/assets/images/banner-img-3.jpg'
 
 const CustomButton = styled(Button)({
   width: "300px",
@@ -29,10 +31,11 @@ const Banner = () => {
 
   return (
     <Box className="relative h-screen z-0">
-      <img
-        src="/assets/images/banner-img-3.jpg"
+      <Image
+        src={banner}
         alt="Background Image"
         className="w-full h-full object-cover absolute inset-0"
+        fill={true}
       />
       <Box className="absolute inset-0 bg-black opacity-30"></Box>
       <Box className="absolute inset-0 flex items-center justify-center">
