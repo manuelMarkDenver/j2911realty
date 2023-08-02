@@ -9,8 +9,6 @@ services:
       - ./client:/app/client
     restart: unless-stopped
     env_file: ./client/.env.local
-    networks:
-      - j2911-realty
 
   nginx:
     depends_on:
@@ -22,8 +20,6 @@ services:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    networks:
-      - j2911-realty
 
 #   strapi:
 #     container_name: strapi
@@ -82,10 +78,10 @@ services:
 # volumes:
 #   strapi-data:
 
-networks:
-  j2911-realty:
-    # name: Strapi
-    driver: bridge
+# networks:
+#   j2911-realty:
+#     # name: Strapi
+#     driver: bridge
 
 # nginx:
 #     container_name: nginx
