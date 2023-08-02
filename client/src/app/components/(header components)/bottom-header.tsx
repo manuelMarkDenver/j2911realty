@@ -150,11 +150,11 @@ function BottomHeader() {
           >
             {pages?.map((page, index) => (
               <Link
+                key={index}
                 href={page?.path}
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <Button
-                  key={index}
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,

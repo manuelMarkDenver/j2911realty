@@ -17,26 +17,26 @@ type CardProps = {
 
 const FeaturesCard = (props: CardProps) => {
   return (
-    <Card
-      sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        width: { xs: "100%", md: "90%" },
-        height: "100%",
-        transition: "box-shadow 0.5s ease",
-        "&:hover": {
-          boxShadow: "0 0 10px #ed4b82",
-        },
-      }}
-    >
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="300"
-          image={props?.img}
-          alt="Kitchen Designs"
-        />
-        <Link href={props.link} style={{ textDecoration: "none" }}>
+    <Link href={props.link} style={{ width: "100%" }}>
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: { xs: "100%", md: "90%" },
+          height: "100%",
+          transition: "box-shadow 0.5s ease",
+          "&:hover": {
+            boxShadow: "0 0 10px #ed4b82",
+          },
+        }}
+      >
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="300"
+            image={props?.img}
+            alt="Kitchen Designs"
+          />
           <CardContent
             className="text-center"
             sx={{ py: "50px", color: "black" }}
@@ -48,9 +48,9 @@ const FeaturesCard = (props: CardProps) => {
               {props?.description}
             </Typography>
           </CardContent>
-        </Link>
-      </CardActionArea>
-    </Card>
+        </CardActionArea>
+      </Card>
+     </Link> 
   );
 };
 
