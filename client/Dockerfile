@@ -1,5 +1,5 @@
 # For the Next.js app in development
-FROM node:18-alpine as dev
+FROM node:18-alpine as builder
 WORKDIR /var/www/j2911realty/client
 COPY ./package*.json ./
 RUN npm install
