@@ -17,9 +17,9 @@ import Link from "next/link";
 
 const pages = [
   { text: "Home", path: "/" },
-  { text: "About Us", path: "/about" },
-  { text: "Pricing", path: "/pricing" },
-  { text: "Contact Us", path: "/contact" },
+  { text: "About Us", path: "/" },
+  { text: "Pricing", path: "/" },
+  { text: "Contact Us", path: "/" },
 ];
 
 function BottomHeader() {
@@ -58,15 +58,15 @@ function BottomHeader() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            <Link href="/">
-              <Image
-                src="/assets/images/site-logo.png"
-                alt="header site logo"
-                width={150}
-                height={100}
-                className="my-3"
-              />
-            </Link>
+            {/* <Link href="/"> */}
+            <Image
+              src="/assets/images/site-logo.png"
+              alt="header site logo"
+              width={150}
+              height={100}
+              className="my-3"
+            />
+            {/* </Link> */}
           </Box>
 
           <Box
@@ -113,14 +113,14 @@ function BottomHeader() {
             >
               {pages.map((page, index) => (
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Link
+                  {/* <Link
                     href={page?.path}
                     style={{ textDecoration: "none", color: "black" }}
-                  >
+                  > */}
                     <Typography textAlign="center" sx={{ color: "black" }}>
                       {page?.text}
                     </Typography>
-                  </Link>
+                  {/* </Link> */}
                 </MenuItem>
               ))}
             </Menu>
@@ -149,23 +149,24 @@ function BottomHeader() {
             }}
           >
             {pages?.map((page, index) => (
-              <Link
+              // <Link
+              //   key={index}
+              //   href={page?.path}
+              //   style={{ textDecoration: "none", color: "black" }}
+              // >
+              <Button
                 key={index}
-                href={page?.path}
-                style={{ textDecoration: "none", color: "black" }}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "black",
+                  display: "block",
+                  fontSize: "1.1rem",
+                }}
               >
-                <Button
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    display: "block",
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  {page?.text}
-                </Button>
-              </Link>
+                {page?.text}
+              </Button>
+              // </Link>
             ))}
           </Box>
         </Toolbar>
