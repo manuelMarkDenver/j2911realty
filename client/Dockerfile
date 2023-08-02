@@ -20,7 +20,7 @@ FROM node:18-alpine
 WORKDIR /app/client
 COPY --from=builder /app/client/package*.json ./
 RUN npm install --production
-COPY --from=builder /app/client/_static ./_static
+COPY --from=builder /app/client/.static ./static
 # COPY --from=builder /app/client/.next ./.next
 EXPOSE 3000
 CMD ["npm", "run", "start"]
