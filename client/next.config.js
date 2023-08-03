@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // output: 'export',
-  // distDir: '_static',
+  output: "export",
+  distDir: "_static",
   images: {
-    domains: ["128.199.156.22", "localhost"],
+    unoptimized: true,
+    domains: ["128.199.156.22", "localhost", "j2911realty.com"],
   },
 };
 
