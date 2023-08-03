@@ -1,7 +1,6 @@
 import { Container, Stack, Typography, Box } from "@mui/material";
 import { useIsMobile } from "../lib/helpers";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
-import Image from "next/image";
 
 const MissionVision = () => {
   return (
@@ -33,11 +32,10 @@ const MissionVision = () => {
                   fontSize: { xs: "1.5rem", md: "3rem" },
                 }}
               >
-                Our Experience
+                Reimagine Your Space
               </Typography>
               <Typography variant="body1">
-                Aenean lobortis nunc eu nibh convallis varius. Ut id erat ut
-                purus euismod elementum eu vel mauris. Suspendisse potenti.
+                Let’s work together and bring your dreams into reality.
               </Typography>
             </Box>
             <Box>
@@ -47,12 +45,12 @@ const MissionVision = () => {
                   fontSize: { xs: "1.5rem", md: "3rem" },
                 }}
               >
-                Client Satisfaction
+                Our Portfolio
               </Typography>
-              <Typography variant="body1">
+              {/* <Typography variant="body1">
                 Maecenas dictum ex vitae lacus laoreet, sed pretium erat
                 maximus. Suspendisse ligula mi, rutrum.
-              </Typography>
+              </Typography> */}
             </Box>
             <Box>
               <Typography
@@ -61,12 +59,12 @@ const MissionVision = () => {
                   fontSize: { xs: "1.5rem", md: "3rem" },
                 }}
               >
-                Personalized Process
+                Contact Us
               </Typography>
-              <Typography variant="body1">
+              {/* <Typography variant="body1">
                 In hac habitasse platea dictumst. Morbi tristique molestie
                 tortor sit amet accumsan. Praesent cursus pulvinar suscipit.
-              </Typography>
+              </Typography> */}
             </Box>
           </Stack>
         </Grid>

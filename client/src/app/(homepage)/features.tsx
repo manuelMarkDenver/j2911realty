@@ -24,15 +24,16 @@ const Features = () => {
             fontSize: { xs: "2.2rem", md: "4rem" },
           }}
         >
-          Cozy <span className="italic">comfort</span>, Elegance{" "}
-          <span className="italic">redefined</span> <br />& Timeless{" "}
-          <span className="italic">beauty</span>
+          Elegance <span className="italic underline">redefined</span>, Timeless{" "}
+          <span className="italic underline">beauty</span> <br />& Our{" "}
+          <span className="italic underline">approach</span>
         </Typography>
         <Typography variant="h6">
-          We believe your space should make sense. We thrive in taking homes
+          We believe your space should make sense. We thrive in taking homes and
+          accenting their natural beauty
+          <br /> while bringing together modern design and convenience.
           <br />
-          and accenting their natural beauty while bringing together modern
-          design and convenience.
+          All tailored to your budget!
         </Typography>
       </Stack>
       <Grid
