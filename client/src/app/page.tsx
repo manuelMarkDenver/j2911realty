@@ -14,6 +14,7 @@ export default function Home() {
       <Banner />
       <Features />
       <MissionVision />
+      <Banner />
     </>
   );
 }

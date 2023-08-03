@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -35,8 +36,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "_static/types/**/*.ts"
-  ],
+, "src/app/lib/imageGetters.js"  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  
 }

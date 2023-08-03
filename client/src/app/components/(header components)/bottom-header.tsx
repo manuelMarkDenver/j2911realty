@@ -58,15 +58,15 @@ function BottomHeader() {
               display: { xs: "none", md: "flex" },
             }}
           >
-            {/* <Link href="/"> */}
-            <Image
-              src="/assets/images/site-logo.png"
-              alt="header site logo"
-              width={150}
-              height={100}
-              className="my-3"
-            />
-            {/* </Link> */}
+            <Link href="/">
+              <Image
+                src="/assets/images/site-logo.png"
+                alt="header site logo"
+                width={150}
+                height={100}
+                className="my-3"
+              />
+            </Link>
           </Box>
 
           <Box
@@ -113,14 +113,14 @@ function BottomHeader() {
             >
               {pages.map((page, index) => (
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
-                  {/* <Link
+                  <Link
                     href={page?.path}
                     style={{ textDecoration: "none", color: "black" }}
-                  > */}
+                  >
                     <Typography textAlign="center" sx={{ color: "black" }}>
                       {page?.text}
                     </Typography>
-                  {/* </Link> */}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -149,24 +149,24 @@ function BottomHeader() {
             }}
           >
             {pages?.map((page, index) => (
-              // <Link
-              //   key={index}
-              //   href={page?.path}
-              //   style={{ textDecoration: "none", color: "black" }}
-              // >
-              <Button
+              <Link
                 key={index}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontSize: "1.1rem",
-                }}
+                href={page?.path}
+                style={{ textDecoration: "none", color: "black" }}
               >
-                {page?.text}
-              </Button>
-              // </Link>
+                <Button
+                  key={index}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "black",
+                    display: "block",
+                    fontSize: "1.1rem",
+                  }}
+                >
+                  {page?.text}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
