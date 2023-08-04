@@ -16,7 +16,7 @@ const Features = () => {
           variant="h5"
           sx={{ fontWeight: "semi-bold" }}
         >
-          Merging comfort and style seamlessly for a refined living experience.
+          Merging comfort and style seamlessly for a refined living experience.x
         </Typography>
         <Typography
           component="h3"
