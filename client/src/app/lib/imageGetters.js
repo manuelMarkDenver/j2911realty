@@ -30,8 +30,6 @@ const getImagesFiles = (folderpath) => {
     return filename;
   });
 
-  console.log(imageFilenames);
-
   return imageFilenames;
 };
 

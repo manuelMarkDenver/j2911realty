@@ -14,11 +14,17 @@ import MenuItem from "@mui/material/MenuItem";
 import { Stack, useTheme } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { Url } from "url"; // Import the Url type from the appropriate module
 
-const pages = [
+type PageProps = {
+  text: string;
+  path?: Url | string | null;
+};
+
+const pages: PageProps[] = [
   { text: "Home", path: "/" },
   { text: "About Us", path: "/" },
-  { text: "Pricing", path: "/" },
+  { text: "Designs", path: null },
   { text: "Contact Us", path: "/" },
 ];
 
@@ -30,23 +36,24 @@ function BottomHeader() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  // Design Menu:
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleDesignMenuClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleDesignMenuClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -111,18 +118,33 @@ function BottomHeader() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page, index) => (
-                <MenuItem key={index} onClick={handleCloseNavMenu}>
-                  <Link
-                    href={page?.path}
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    <Typography textAlign="center" sx={{ color: "black" }}>
+              {pages.map((page, index) =>
+                page.text === "Designs" ? (
+                  <MenuItem key={index} onClick={handleDesignMenuClick}>
+                    <Typography
+                      textAlign="center"
+                      sx={{ color: "black", fontSize: "18px" }}
+                    >
                       {page?.text}
                     </Typography>
-                  </Link>
-                </MenuItem>
-              ))}
+                  </MenuItem>
+                ) : (
+                  // For other pages, render a simple <p>test</p> element.
+                  <MenuItem key={index} onClick={handleCloseNavMenu}>
+                    <Link
+                      href={page?.path ? page?.path : ""}
+                      className="no-underline text-black"
+                    >
+                      <Typography
+                        textAlign="center"
+                        sx={{ color: "black", fontSize: "18px" }}
+                      >
+                        {page?.text}
+                      </Typography>
+                    </Link>
+                  </MenuItem>
+                )
+              )}
             </Menu>
           </Box>
 
@@ -148,27 +170,68 @@ function BottomHeader() {
               justifyContent: "flex-end",
             }}
           >
-            {pages?.map((page, index) => (
-              <Link
-                key={index}
-                href={page?.path}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <Button
-                  key={index}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    display: "block",
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  {page?.text}
-                </Button>
-              </Link>
-            ))}
+            {pages.map((page, index) =>
+              page.text === "Designs" ? (
+                <MenuItem key={index} onClick={handleDesignMenuClick}>
+                  <Typography
+                    textAlign="center"
+                    sx={{ color: "black", fontSize: "18px" }}
+                  >
+                    {page?.text}
+                  </Typography>
+                </MenuItem>
+              ) : (
+                // For other pages, render a simple <p>test</p> element.
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
+                  <Link
+                    href={page?.path ? page?.path : ""}
+                    className="no-underline text-black"
+                  >
+                    <Typography
+                      textAlign="center"
+                      sx={{ color: "black", fontSize: "18px" }}
+                    >
+                      {page?.text}
+                    </Typography>
+                  </Link>
+                </MenuItem>
+              )
+            )}
           </Box>
+          <Menu 
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleDesignMenuClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
+              <Link
+                href="/designs/kitchen-designs"
+                className="no-underline text-black"
+              >
+                Kitchen Designs
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
+              <Link
+                href="/designs/livingroom-designs"
+                className="no-underline text-black"
+              >
+                Living Room Designs
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
+              <Link
+                href="/designs/bedroom-designs"
+                className="no-underline text-black"
+              >
+                Bedroom Designs
+              </Link>
+            </MenuItem>
+          </Menu>
         </Toolbar>
       </Container>
     </AppBar>

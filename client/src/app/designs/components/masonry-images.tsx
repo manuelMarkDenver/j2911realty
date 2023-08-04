@@ -9,8 +9,6 @@ const MasonryImages = ({
   imagesFileNames: any;
   folderPath: string;
 }) => {
-  console.log("🚀 ~ file: masonry-images.tsx:12 ~ folderPath:", folderPath)
-  console.log("🚀 ~ file: masonry-images.tsx:12 ~ imagesFileNames:", imagesFileNames)
   return (
     <Box sx={{ overflowY: "scroll" }}>
       <ImageList variant="masonry" cols={3} gap={8}>
