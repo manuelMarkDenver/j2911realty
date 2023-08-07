@@ -24,9 +24,9 @@ const FeaturesCard = (props: CardProps) => {
           justifyContent: "space-between",
           width: { xs: "100%", md: "90%" },
           height: "100%",
-          transition: "box-shadow 0.5s ease",
+          transition: "transform 0.3s",
           "&:hover": {
-            boxShadow: "0 0 10px #ed4b82",
+            transform: "scale(1.02)",
           },
         }}
       >
@@ -50,7 +50,7 @@ const FeaturesCard = (props: CardProps) => {
           </CardContent>
         </CardActionArea>
       </Card>
-     </Link> 
+    </Link>
   );
 };
 
