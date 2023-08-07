@@ -9,7 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
   // assetPrefix: isProd ? "https://j2911realty.com/" : undefined,
 };
 
