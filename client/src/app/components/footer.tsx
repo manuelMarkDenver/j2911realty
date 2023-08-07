@@ -22,6 +22,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useIsMobile } from "../lib/helpers";
+import { contact_info } from '../lib/contants';
 
 // const customFontFamily = ["Times New Roman", "Sans serif"];
 
@@ -59,12 +60,17 @@ const StyledButton = styled(Button)({
 });
 
 const Footer = () => {
+  const email = contact_info.find((item) => item.type === "email")?.value;
+  const contactNumber = contact_info.find(
+    (item) => item.type === "contact_number"
+  )?.value;
+
   return (
     <Box
       className={`${
         !useIsMobile ? "h-screen py-28" : "h-full py-20"
       } flex items-center justify-center`}
-      sx={{ backgroundColor: "#bdb9b3" }}
+      sx={{ backgroundColor: "black" }}
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
@@ -73,20 +79,22 @@ const Footer = () => {
               <Image
                 src="/assets/images/site-logo.png"
                 alt="site logo"
-                width={240}
-                height={150}
+                width={180}
+                height={130}
               />
               <Typography variant="h6" className="text-slate-100">
                 J2911 Realty
-              </Typography>
-              <Typography className="text-slate-100">
+              </Typography><Typography className="text-slate-100">
                 Kulas Light, Apt. 556
               </Typography>
               <Typography className="text-slate-100">Gwenborough</Typography>
-              <Typography className="text-slate-100">92998-3874</Typography>
-              <a href="mailto:test@j2911realty.com">
+              {/*  */}
+              <Typography className="text-slate-100">
+                {contactNumber}
+              </Typography>
+              <a href="mailto:test@j2911realty.com" style={{ textDecoration: "none" }}>
                 <Typography
-                  className="text-blue-800 italic"
+                  className="text-white italic"
                   sx={{
                     textDecoration: "none",
                     "&:hover": {
@@ -94,7 +102,7 @@ const Footer = () => {
                     },
                   }}
                 >
-                  test@j2911realty.com
+                  {email}
                 </Typography>
               </a>
               <Stack direction="row" justifyContent="center">
@@ -175,7 +183,7 @@ const Footer = () => {
                 <TextField
                   sx={{
                     backgroundColor: "white",
-                    color: "white"
+                    color: "white",
                   }}
                   id="input-with-icon-textfield"
                   label="Name"
@@ -190,7 +198,7 @@ const Footer = () => {
                 />
                 <TextField
                   sx={{
-                    backgroundColor: "white"
+                    backgroundColor: "white",
                   }}
                   id="input-with-icon-textfield"
                   label="Email"

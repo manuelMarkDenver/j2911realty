@@ -24,9 +24,12 @@ const Features = () => {
             fontSize: { xs: "2.2rem", md: "4rem" },
           }}
         >
-          Elegance <span className="italic underline">redefined</span>, Timeless{" "}
-          <span className="italic underline">beauty</span> <br />& Our{" "}
-          <span className="italic underline">approach</span>
+          <span className="font-thin text-gray-600">Elegance</span>{" "}
+          <span className="italic font-semibold">redefined</span>,<br/>{" "}
+          <span className="font-thin text-gray-600">Timeless</span>{" "}
+          <span className="italic font-semibold">beauty</span> <br />&{" "}
+          <span className="font-thin text-gray-600">Our</span>{" "}
+          <span className="italic font-semibold">approach</span>
         </Typography>
         <Typography variant="h6">
           We believe your space should make sense. We thrive in taking homes and

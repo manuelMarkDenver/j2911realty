@@ -24,7 +24,7 @@ type PageProps = {
 const pages: PageProps[] = [
   { text: "Home", path: "/" },
   { text: "About Us", path: "/" },
-  { text: "Designs", path: null },
+  { text: "Projects", path: null },
   { text: "Contact Us", path: "/" },
 ];
 
@@ -69,7 +69,7 @@ function BottomHeader() {
               <Image
                 src="/assets/images/site-logo.png"
                 alt="header site logo"
-                width={150}
+                width={120}
                 height={100}
                 className="my-3"
               />
