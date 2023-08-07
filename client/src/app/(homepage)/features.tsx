@@ -21,15 +21,18 @@ const Features = () => {
         <Typography
           component="h3"
           sx={{
-            fontSize: { xs: "2.2rem", md: "4rem" },
+            fontSize: { xs: "2.2rem", md: "3.5rem" },
           }}
         >
           <span className="font-thin text-gray-600">Elegance</span>{" "}
-          <span className="italic font-semibold">redefined</span>,<br/>{" "}
+          <span className="italic font-semibold">Redefined</span>,<br />{" "}
           <span className="font-thin text-gray-600">Timeless</span>{" "}
-          <span className="italic font-semibold">beauty</span> <br />&{" "}
+          <span className="italic font-semibold">
+            Beauty <br />
+            <span className="font-thin text-gray-600">&</span>{" "}
+          </span>
           <span className="font-thin text-gray-600">Our</span>{" "}
-          <span className="italic font-semibold">approach</span>
+          <span className="italic font-semibold">Approach</span>
         </Typography>
         <Typography variant="h6">
           We believe your space should make sense. We thrive in taking homes and

@@ -119,7 +119,7 @@ function BottomHeader() {
               }}
             >
               {pages.map((page, index) =>
-                page.text === "Designs" ? (
+                page.text === "Projects" ? (
                   <MenuItem key={index} onClick={handleDesignMenuClick}>
                     <Typography
                       textAlign="center"
@@ -171,7 +171,7 @@ function BottomHeader() {
             }}
           >
             {pages.map((page, index) =>
-              page.text === "Designs" ? (
+              page.text === "Projects" ? (
                 <MenuItem key={index} onClick={handleDesignMenuClick}>
                   <Typography
                     textAlign="center"
@@ -209,7 +209,7 @@ function BottomHeader() {
           >
             <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
               <Link
-                href="/designs/kitchen-designs"
+                href="/kitchen-designs"
                 className="no-underline text-black"
               >
                 Kitchen Designs
@@ -217,7 +217,7 @@ function BottomHeader() {
             </MenuItem>
             <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
               <Link
-                href="/designs/livingroom-designs"
+                href="/livingroom-designs"
                 className="no-underline text-black"
               >
                 Living Room Designs
@@ -225,7 +225,7 @@ function BottomHeader() {
             </MenuItem>
             <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
               <Link
-                href="/designs/bedroom-designs"
+                href="/bedroom-designs"
                 className="no-underline text-black"
               >
                 Bedroom Designs
