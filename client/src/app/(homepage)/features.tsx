@@ -52,7 +52,7 @@ const Features = () => {
             img="/assets/images/features/feature-img-1.jpg"
             title="Kitchen Designs"
             description="Sleek, modern chef's dream, granite countertops."
-            link="/designs/kitchen-designs"
+            link="/kitchen-designs"
           />
         </Grid>
         <Grid
@@ -64,7 +64,7 @@ const Features = () => {
             img="/assets/images/features/feature-img-2.jpg"
             title="Living Room Designs"
             description="Elegant comfort, inviting fireplace, open space."
-            link="/designs/livingroom-designs"
+            link="/livingroom-designs"
           />
         </Grid>
         <Grid
@@ -76,7 +76,7 @@ const Features = () => {
             img="/assets/images/features/feature-img-3.jpg"
             title="Bedroom Designs"
             description="Tranquil oasis, plush luxury, serene retreat."
-            link="/designs/bedroom-designs"
+            link="/bedroom-designs"
           />
         </Grid>
       </Grid>
