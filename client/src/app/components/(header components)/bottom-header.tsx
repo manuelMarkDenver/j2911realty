@@ -66,7 +66,6 @@ function BottomHeader() {
             }}
           >
             <Link href="/">
-                prefetch={false}
               <Image
                 src="/assets/images/site-logo.png"
                 alt="header site logo"
@@ -133,7 +132,6 @@ function BottomHeader() {
                   // For other pages, render a simple <p>test</p> element.
                   <MenuItem key={index} onClick={handleCloseNavMenu}>
                     <Link
-                      prefetch={false}
                       href={page?.path ? page?.path : ""}
                       className="no-underline text-black"
                     >
@@ -186,7 +184,6 @@ function BottomHeader() {
                 // For other pages, render a simple <p>test</p> element.
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
                   <Link
-                    prefetch={false}
                     href={page?.path ? page?.path : ""}
                     className="no-underline text-black"
                   >
@@ -212,7 +209,6 @@ function BottomHeader() {
           >
             <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
               <Link
-                prefetch={false}
                 href="/kitchen-designs"
                 className="no-underline text-black"
               >
@@ -221,7 +217,6 @@ function BottomHeader() {
             </MenuItem>
             <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
               <Link
-                prefetch={false}
                 href="/livingroom-designs"
                 className="no-underline text-black"
               >
@@ -230,7 +225,6 @@ function BottomHeader() {
             </MenuItem>
             <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
               <Link
-                prefetch={false}
                 href="/bedroom-designs"
                 className="no-underline text-black"
               >
