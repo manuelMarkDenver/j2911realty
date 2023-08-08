@@ -10,6 +10,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // assetPrefix: isProd ? "https://j2911realty.com/" : undefined,
+  
 };
 
 module.exports = nextConfig;

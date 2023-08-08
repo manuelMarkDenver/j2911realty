@@ -6,7 +6,8 @@ const BedroomDesignsPage = () => {
   const imagesFileNames = getImagesFiles(folderPath);
   
   return (
-    <MasonryImages imagesFileNames={imagesFileNames} folderPath={folderPath} />
+    // <MasonryImages imagesFileNames={imagesFileNames} folderPath={folderPath} />
+    <p>Test</p>
   );
 };
 
