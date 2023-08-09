@@ -5,9 +5,7 @@ const LivingRoomDesignsPage = () => {
   const folderPath = "livingroom-designs";
   const imagesFileNames = getImagesFiles(folderPath);
 
-  return (
-    <MasonryImages imagesFileNames={imagesFileNames} folderPath={folderPath} />
-  );
+  return <MasonryImages imagesFileNames={imagesFileNames} />;
 };
 
 export default LivingRoomDesignsPage;
