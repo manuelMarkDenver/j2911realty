@@ -50,6 +50,7 @@ const Banner = () => {
               fontSize: !useIsMobile() ? "2rem" : "1rem",
               color: theme.palette.primary.main,
             }}
+            
           >
             Design The Home of Your Dreams
           </Typography>
@@ -61,6 +62,7 @@ const Banner = () => {
               mb: "40px",
               fontStyle: "italic",
             }}
+            
           >
             Beauty Is In The Details
           </Typography>

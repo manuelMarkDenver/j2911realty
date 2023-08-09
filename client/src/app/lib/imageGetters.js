@@ -1,3 +1,5 @@
+import { pathTransformer } from './helpers';
+
 const fs = require("fs");
 const path = require("path");
 
@@ -26,8 +28,10 @@ const getImagesFiles = (folderpath) => {
   });
 
   const imageFilenames = imageFiles.map((imagePath, index) => {
-    const filename = path.basename(imagePath);
-    return filename;
+    // const filename = path.basename(imagePath);
+    // return filename;
+    const transformedPath = pathTransformer(imagePath);
+    return transformedPath;
   });
 
   return imageFilenames;

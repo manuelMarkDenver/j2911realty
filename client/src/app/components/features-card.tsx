@@ -13,6 +13,7 @@ type CardProps = {
   title: string;
   description: string;
   link?: string | any;
+  images: string[]
 };
 
 const FeaturesCard = (props: CardProps) => {

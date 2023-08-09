@@ -11,6 +11,7 @@ const nextConfig = {
   },
   // assetPrefix: isProd ? "https://j2911realty.com/" : undefined,
   generateEtags: false,
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;

@@ -1,11 +1,15 @@
 "use client";
-
 import { Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import FeaturesCard from "../components/features-card";
 import { useIsMobile } from "../lib/helpers";
 
-const Features = () => {
+const Features = ({
+  allImages,
+  bedroomImages,
+  kitchenImages,
+  livingroomImages,
+}: any) => {
   return (
     <Container
       className={`${!useIsMobile ? "h-screen py-28" : "h-full py-20"}`}
@@ -16,23 +20,35 @@ const Features = () => {
           variant="h5"
           sx={{ fontWeight: "semi-bold" }}
         >
-          Merging comfort and style seamlessly for a refined living experience.x
+          Merging comfort and style seamlessly for a refined living experience.
         </Typography>
         <Typography
           component="h3"
           sx={{
-            fontSize: { xs: "2.2rem", md: "3.5rem" },
+            fontSize: { xs: "2.2rem", md: "3rem" },
+            letterSpacing: "1.2px",
+            margin: "10px 0",
           }}
         >
           <span className="font-thin text-gray-600">Elegance</span>{" "}
-          <span className="italic font-semibold">Redefined</span>,<br />{" "}
-          <span className="font-thin text-gray-600">Timeless</span>{" "}
-          <span className="italic font-semibold">
-            Beauty <br />
-            <span className="font-thin text-gray-600">&</span>{" "}
+          <span
+            className={`font-medium text-4xl md:text-6xl tracking-wider font-great-vibes`}
+          >
+            Redefined
           </span>
+          , <span className="font-thin text-gray-600">Timeless</span>{" "}
+          <span
+            className={`font-medium text-4xl md:text-6xl tracking-wider font-great-vibes`}
+          >
+            Beauty <br />
+          </span>
+          <span className="font-thin text-gray-600">&</span>{" "}
           <span className="font-thin text-gray-600">Our</span>{" "}
-          <span className="italic font-semibold">Approach</span>
+          <span
+            className={`font-medium text-4xl md:text-6xl tracking-wider font-great-vibes`}
+          >
+            Approach
+          </span>
         </Typography>
         <Typography variant="h6">
           We believe your space should make sense. We thrive in taking homes and
@@ -57,8 +73,9 @@ const Features = () => {
           <FeaturesCard
             img="/assets/images/features/feature-img-1.jpg"
             title="Kitchen Designs"
-            description="Sleek, modern chef's dream, granite countertops."
+            description="Modern, beautiful and functional"
             link="/kitchen-designs"
+            images={kitchenImages}
           />
         </Grid>
         <Grid
@@ -69,8 +86,9 @@ const Features = () => {
           <FeaturesCard
             img="/assets/images/features/feature-img-2.jpg"
             title="Living Room Designs"
-            description="Elegant comfort, inviting fireplace, open space."
+            description="Beautiful and elegant spaces"
             link="/livingroom-designs"
+            images={livingroomImages}
           />
         </Grid>
         <Grid
@@ -81,8 +99,9 @@ const Features = () => {
           <FeaturesCard
             img="/assets/images/features/feature-img-3.jpg"
             title="Bedroom Designs"
-            description="Tranquil oasis, plush luxury, serene retreat."
+            description="Stylish, sexy and restful"
             link="/bedroom-designs"
+            images={bedroomImages}
           />
         </Grid>
       </Grid>

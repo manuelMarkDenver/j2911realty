@@ -6,4 +6,16 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-export { useIsMobile };
+const pathTransformer = (path: string) => {
+  const regex = /\/public(.+)/; // Match '/assets' followed by any characters
+  const match = path.match(regex);
+
+  if (match) {
+    const relativePath = match[1]; // The extracted relative path
+    return relativePath;
+  } else {
+    console.log("No match found.");
+  }
+};
+
+export { useIsMobile, pathTransformer };
