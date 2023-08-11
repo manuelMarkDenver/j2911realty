@@ -123,7 +123,7 @@ function BottomHeader() {
                   <MenuItem key={index} onClick={handleDesignMenuClick}>
                     <Typography
                       textAlign="center"
-                      sx={{ color: "black", fontSize: "18px" }}
+                      sx={{ color: "black", fontSize: "1.3rem" }}
                     >
                       {page?.text}
                     </Typography>
@@ -137,7 +137,7 @@ function BottomHeader() {
                     >
                       <Typography
                         textAlign="center"
-                        sx={{ color: "black", fontSize: "18px" }}
+                        sx={{ color: "black", fontSize: "1.3rem" }}
                       >
                         {page?.text}
                       </Typography>
@@ -175,7 +175,7 @@ function BottomHeader() {
                 <MenuItem key={index} onClick={handleDesignMenuClick}>
                   <Typography
                     textAlign="center"
-                    sx={{ color: "black", fontSize: "18px" }}
+                    sx={{ color: "black", fontSize: "1.3rem" }}
                   >
                     {page?.text}
                   </Typography>
@@ -189,7 +189,7 @@ function BottomHeader() {
                   >
                     <Typography
                       textAlign="center"
-                      sx={{ color: "black", fontSize: "18px" }}
+                      sx={{ color: "black", fontSize: "1.3rem" }}
                     >
                       {page?.text}
                     </Typography>
@@ -207,7 +207,7 @@ function BottomHeader() {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
+            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "1.3rem" }}>
               <Link
                 href="/kitchen-designs"
                 className="no-underline text-black"
@@ -215,7 +215,7 @@ function BottomHeader() {
                 Kitchen Designs
               </Link>
             </MenuItem>
-            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
+            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "1.3rem" }}>
               <Link
                 href="/livingroom-designs"
                 className="no-underline text-black"
@@ -223,7 +223,7 @@ function BottomHeader() {
                 Living Room Designs
               </Link>
             </MenuItem>
-            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "18px" }}>
+            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "1.3rem" }}>
               <Link
                 href="/bedroom-designs"
                 className="no-underline text-black"
