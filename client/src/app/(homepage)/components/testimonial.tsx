@@ -51,7 +51,7 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: any }) => {
             <AvatarImage
               alt="Testimonial"
               src={`https://i.pravatar.cc/300?img=${index + 1}`}
-              sx={{ width: 300, height: 300 }}
+              sx={{ width: 250, height: 250 }}
             />
             <TestimonialText variant="body1">
               {testimonial.testimonialText}
