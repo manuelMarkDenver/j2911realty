@@ -9,6 +9,10 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {
+  SampleNextArrow,
+  SamplePrevArrow,
+} from "@/app/styling/carousel-styling";
 
 const TestimonialContainer = styled("div")({
   display: "flex",
@@ -37,6 +41,9 @@ const TestimonialsCarousel = ({ testimonials }: { testimonials: any }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    arrows: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
 
   if (testimonials?.length === 0) return <p>No testimonials yet.</p>;

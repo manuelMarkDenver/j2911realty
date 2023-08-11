@@ -22,17 +22,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useIsMobile } from "../lib/helpers";
-import { contact_info } from '../lib/contants';
-
-// const customFontFamily = ["Times New Roman", "Sans serif"];
-
-// const CustomTypography = styled(Typography)({
-//   fontFamily: customFontFamily,
-// });
-
-// const CustomTextField = styled(TextField)({
-//   fontFamily: customFontFamily,
-// });
+import constants from "../lib/contants";
+import Link from "next/link";
 
 const CustomGridItem: any = styled(Grid)({
   display: "flex",
@@ -44,7 +35,7 @@ const CustomGridItem: any = styled(Grid)({
 
 const StyledTextareaAutosize = styled(TextareaAutosize)({
   padding: "10px 5px",
-  backgroundColor: "#E4E1DD",
+  backgroundColor: "white",
   width: "100%",
   border: "solid 1px black",
   borderRadius: "7px",
@@ -54,23 +45,21 @@ const StyledTextareaAutosize = styled(TextareaAutosize)({
 const StyledButton = styled(Button)({
   color: "black",
   "&:hover": {
-    backgroundColor: "#334155",
-    color: "white",
+    backgroundColor: "#F8F9F4",
+    color: "black",
   },
 });
 
 const Footer = () => {
-  const email = contact_info.find((item) => item.type === "email")?.value;
-  const contactNumber = contact_info.find(
-    (item) => item.type === "contact_number"
-  )?.value;
+  const iconColor = "#696765";
 
   return (
     <Box
+      id="contact"
       className={`${
         !useIsMobile ? "h-screen py-28" : "h-full py-20"
       } flex items-center justify-center`}
-      sx={{ backgroundColor: "black" }}
+      sx={{ backgroundColor: "#e4e1dd", color: "black" }}
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
@@ -82,19 +71,18 @@ const Footer = () => {
                 width={180}
                 height={130}
               />
-              <Typography variant="h6" className="text-slate-100">
+              <Typography variant="h6" className="text-slate-700">
                 J2911 Realty
-              </Typography><Typography className="text-slate-100">
-                Kulas Light, Apt. 556
               </Typography>
-              <Typography className="text-slate-100">Gwenborough</Typography>
-              {/*  */}
-              <Typography className="text-slate-100">
-                {contactNumber}
+              <Typography className="text-slate-700">
+                {constants?.CONTACT_NUMBER}
               </Typography>
-              <a href="mailto:test@j2911realty.com" style={{ textDecoration: "none" }}>
+              <a
+                href="mailto:test@j2911realty.com"
+                style={{ textDecoration: "none" }}
+              >
                 <Typography
-                  className="text-white italic"
+                  className="text-slate-700 italic"
                   sx={{
                     textDecoration: "none",
                     "&:hover": {
@@ -102,18 +90,43 @@ const Footer = () => {
                     },
                   }}
                 >
-                  {email}
+                  {constants?.EMAIL}
                 </Typography>
               </a>
-              <Stack direction="row" justifyContent="center">
-                <IconButton>
-                  <FacebookIcon />
+              <Stack direction="row" spacing={1}>
+                <IconButton sx={{ paddingLeft: 0 }}>
+                  <Link
+                    href={constants?.FB_ACCOUNT}
+                    style={{ color: iconColor }}
+                  >
+                    <FacebookIcon />
+                  </Link>
                 </IconButton>
                 <IconButton>
-                  <InstagramIcon />
+                  <Link href={constants?.FB_PAGE} style={{ color: iconColor }}>
+                    <FacebookIcon />
+                  </Link>
                 </IconButton>
                 <IconButton>
-                  <TwitterIcon />
+                  <Link
+                    href={constants?.IG_ACCOUNT}
+                    style={{ color: iconColor }}
+                  >
+                    <InstagramIcon />
+                  </Link>
+                </IconButton>
+                <IconButton>
+                  <Link
+                    href={constants?.AIRBNB_ACCOUNT}
+                    style={{ color: iconColor }}
+                  >
+                    <Image
+                      src="/assets/images/airbnb-logo.png"
+                      alt="Airbnb Logo"
+                      width={20}
+                      height={20}
+                    />
+                  </Link>
                 </IconButton>
               </Stack>
             </Stack>
@@ -130,7 +143,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">Home</Typography>
+                <Typography className="text-slate-700">Home</Typography>
               </Button>
               <Button
                 variant="text"
@@ -142,7 +155,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">About Us</Typography>
+                <Typography className="text-slate-700">About Us</Typography>
               </Button>
               <Button
                 variant="text"
@@ -154,7 +167,7 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">Pricing</Typography>
+                <Typography className="text-slate-700">Projects</Typography>
               </Button>
               <Button
                 variant="text"
@@ -166,7 +179,9 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">Contact Us</Typography>
+                <a href="#contact">
+                  <Typography className="text-slate-700">Contact Us</Typography>
+                </a>
               </Button>
             </Stack>
           </CustomGridItem>
@@ -175,16 +190,14 @@ const Footer = () => {
               <Typography
                 sx={{ marginBottom: "30px" }}
                 align="left"
-                className="text-slate-100"
+                className="text-slate-700"
               >
-                Send us a message.
+                Feel free to send us a message.
               </Typography>
               <Stack gap={2}>
                 <TextField
-                  sx={{
-                    backgroundColor: "white",
-                    color: "white",
-                  }}
+                  color="info"
+                  sx={{ background: "white" }}
                   id="input-with-icon-textfield"
                   label="Name"
                   InputProps={{
@@ -197,9 +210,8 @@ const Footer = () => {
                   variant="filled"
                 />
                 <TextField
-                  sx={{
-                    backgroundColor: "white",
-                  }}
+                  color="info"
+                  sx={{ background: "white" }}
                   id="input-with-icon-textfield"
                   label="Email"
                   InputProps={{

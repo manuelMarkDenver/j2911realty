@@ -5,13 +5,13 @@ import FeaturesCard from "../components/features-card";
 import { useIsMobile } from "../lib/helpers";
 
 const Features = ({
-  allImages,
   bedroomImages,
   kitchenImages,
   livingroomImages,
 }: any) => {
   return (
     <Container
+      id="projects"
       className={`${!useIsMobile ? "h-screen py-28" : "h-full py-20"}`}
     >
       <Stack className="text-center" sx={{ marginBottom: "100px" }}>

@@ -1,6 +1,7 @@
 import getImagesFiles from "@/app/lib/imageGetters";
 import MasonryImages from "../components/masonry-images";
 import { Typography } from "@mui/material";
+import Link from 'next/link';
 
 const BedroomDesignsPage = () => {
   const folderPath = "bedroom-designs";
@@ -14,6 +15,19 @@ const BedroomDesignsPage = () => {
       >
         Bedroom Designs
       </Typography>
+      <Link
+        href="/#projects"
+        as="/#projects"
+        passHref
+        style={{
+          textDecoration: "none",
+          fontSize: "1.3rem",
+          color: "black",
+          marginLeft: "30px",
+        }}
+      >
+        &lt; Back to other designs
+      </Link>
       <MasonryImages imagesFileNames={imagesFileNames} />
     </>
   );

@@ -1,6 +1,7 @@
 import getImagesFiles from "@/app/lib/imageGetters";
 import MasonryImages from "../components/masonry-images";
-import { Typography } from '@mui/material';
+import { Typography } from "@mui/material";
+import Link from "next/link";
 
 const LivingRoomDesignsPage = () => {
   const folderPath = "livingroom-designs";
@@ -15,6 +16,19 @@ const LivingRoomDesignsPage = () => {
       >
         Living Room Designs
       </Typography>
+      <Link
+        href="/#projects"
+        as="/#projects"
+        passHref
+        style={{
+          textDecoration: "none",
+          fontSize: "1.3rem",
+          color: "black",
+          marginLeft: "30px",
+        }}
+      >
+        &lt; Back to other designs
+      </Link>
       <MasonryImages imagesFileNames={imagesFileNames} />
     </>
   );
