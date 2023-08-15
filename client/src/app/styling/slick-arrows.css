@@ -1,11 +1,17 @@
 /* slick-arrows.css */
 .custom-slick-arrow::before {
-  content: ''; /* Adjust as needed for your design */
+  content: ""; /* Adjust as needed for your design */
   font-size: 30px;
   /* Other styles for the pseudo-element */
 }
 
-.slick-prev, .slick-next {
+.slick-prev,
+.slick-next {
   background: transparent;
-  color: red
+}
+
+.slick-prev:before,
+.slick-next:before {
+  background: transparent;
+  color: #ca5160 !important;
 }
