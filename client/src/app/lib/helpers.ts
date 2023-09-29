@@ -6,10 +6,27 @@ const useIsMobile = () => {
   return isMobile;
 };
 
+const useBreakpoints = () => {
+  const theme = useTheme();
+
+  const xs = useMediaQuery(theme.breakpoints.up("xs"));
+  const sm = useMediaQuery(theme.breakpoints.up("sm"));
+  const md = useMediaQuery(theme.breakpoints.up("md"));
+  const lg = useMediaQuery(theme.breakpoints.up("lg"));
+  const xl = useMediaQuery(theme.breakpoints.up("xl"));
+
+  const xsDown = useMediaQuery(theme.breakpoints.down("xs"));
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+  const lgDown = useMediaQuery(theme.breakpoints.down("lg"));
+  const xlDown = useMediaQuery(theme.breakpoints.down("xl"));
+
+  return {xs, sm, md, lg, xl, xsDown, smDown, mdDown, lgDown, xlDown}
+}
+
 const pathTransformer = (path: string) => {
   const regex = /\/public(.+)/; // Match '/assets' followed by any characters
   const match = path.match(regex);
-
   if (match) {
     const relativePath = match[1]; // The extracted relative path
     return relativePath;
@@ -18,4 +35,4 @@ const pathTransformer = (path: string) => {
   }
 };
 
-export { useIsMobile, pathTransformer };
+export { useIsMobile, pathTransformer, useBreakpoints };
