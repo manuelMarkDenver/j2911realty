@@ -44,12 +44,12 @@ const About = ({ aboutImagePath }: AboutProps) => {
             <CustomTypography variant="h5">
               Brenda Hernandez is CEO and Principal Designer of J.2911 Realty,
               an interior design business committed to giving you the best
-              quality design while sticking to your
+              quality design while sticking to your budget.
             </CustomTypography>
             <CustomTypography variant="h5">
-              budget. J.2911 Realty has practical experience in inhabitant
-              upgrades and providing stunning transformations. We excel in
-              working with our clients and brining their vision to reality.{" "}
+              J.2911 Realty has practical experience in inhabitant upgrades and
+              providing stunning transformations. We excel in working with our
+              clients and brining their vision to reality.{" "}
             </CustomTypography>
             <CustomTypography variant="h5">
               We primarily focus on designing short term rentals, work with
