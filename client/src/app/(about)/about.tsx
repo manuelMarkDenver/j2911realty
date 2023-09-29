@@ -12,20 +12,24 @@ type AboutProps = {
 };
 
 const About = ({ aboutImagePath }: AboutProps) => {
-  console.log(
-    "🚀 ~ file: about.tsx:15 ~ About ~ aboutImagePath:",
-    aboutImagePath
-  );
   const { sm } = useBreakpoints();
 
   return (
     <Container sx={{ py: 10 }}>
-      <Typography variant="h3" className="font-great-vibes text-center mb-10 text-pink-600">
+      <Typography
+        variant="h3"
+        className="font-great-vibes text-center mb-10 text-pink-600"
+      >
         About Me
       </Typography>
       <Grid container>
         <Grid xs={12} md={5}>
-          <Image src={aboutImagePath} width={400} height={600} />
+          <Image
+            src={aboutImagePath ? aboutImagePath : ""}
+            width={400}
+            height={600}
+            alt="Brenda Hernandez"
+          />
         </Grid>
         <Grid xs={12} md={7} justifyContent={"center"} alignItems={"center"}>
           <Stack
