@@ -9,9 +9,9 @@ import {
   styled,
   useTheme,
 } from "@mui/material";
-import { useIsMobile } from "../../lib/helpers";
+import { useIsMobile } from "../lib/helpers";
 
-import banner from "../../../../public/assets/images/banner-img-3.jpg";
+import banner from "../../../public/assets/images/banner-img-3.jpg";
 import Link from "next/link";
 
 const CustomButton = styled(Button)({

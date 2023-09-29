@@ -3,7 +3,7 @@
 import React from "react";
 import Testimonial from "./components/testimonial";
 import { Box, Container, Typography, useTheme } from "@mui/material";
-import { useIsMobile } from "../../lib/helpers";
+import { useIsMobile } from "../lib/helpers";
 
 const TestimonialContainer = () => {
   const testimonials = [

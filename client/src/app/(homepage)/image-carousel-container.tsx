@@ -1,5 +1,5 @@
 import { Container, Typography } from "@mui/material";
-import { useIsMobile } from "../../lib/helpers";
+import { useIsMobile } from "../lib/helpers";
 import ImageCarousel from "./components/image-carousel";
 
 const ImageCarouselContainer = (allImages: any) => {

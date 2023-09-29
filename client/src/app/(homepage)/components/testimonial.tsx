@@ -9,7 +9,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../../styling/carousel-styling";
+import "../../styling/carousel-styling";
 
 const TestimonialContainer = styled("div")({
   display: "flex",

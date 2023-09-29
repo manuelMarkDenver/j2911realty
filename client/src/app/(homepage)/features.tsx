@@ -1,8 +1,8 @@
 "use client";
 import { Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import FeaturesCard from "../../components/features-card";
-import { useBreakpoints, useIsMobile } from "../../lib/helpers";
+import FeaturesCard from "../components/features-card";
+import { useBreakpoints, useIsMobile } from "../lib/helpers";
 
 const Features = ({ bedroomImages, kitchenImages, livingroomImages }: any) => {
   return (

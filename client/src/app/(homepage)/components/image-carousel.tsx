@@ -4,7 +4,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../../../styling/carousel-styling";
+import "../../styling/carousel-styling";
 
 import { Box, Container, Typography } from "@mui/material";
 

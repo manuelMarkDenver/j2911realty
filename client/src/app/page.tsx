@@ -1,17 +1,18 @@
 import { Metadata } from "next";
-import Banner from "./pages/(homepage)/banner";
-import Features from "./pages/(homepage)/features";
-import ImageCarouselContainer from "./pages/(homepage)/image-carousel-container";
+import getImagesFiles from "@/app/lib/imageGetters";
+import getOneImageFilepath from "./lib/imageOneGetter";
+
+import Banner from "./(homepage)/banner";
+import Features from "./(homepage)/features";
+import ImageCarouselContainer from "./(homepage)/image-carousel-container";
+import TestimonialContainer from "./(homepage)/testimonials-container";
+import About from "./(about)/about";
+
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
   description: "J2911 Realty Website",
 };
-
-import getImagesFiles from "@/app/lib/imageGetters";
-import TestimonialContainer from "./pages/(homepage)/testimonials-container";
-import About from "./(about)/about";
-import getOneImageFilepath from "./lib/imageOneGetter";
 
 export default function Home() {
   const bedroomImages = getImagesFiles("bedroom-designs");
