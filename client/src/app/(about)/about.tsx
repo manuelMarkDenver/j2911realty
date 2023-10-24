@@ -23,15 +23,31 @@ const About = ({ aboutImagePath }: AboutProps) => {
         About Me
       </Typography>
       <Grid container>
-        <Grid xs={12} md={5}>
+        <Grid
+          xs={12}
+          md={7}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <Image
             src={aboutImagePath ? aboutImagePath : ""}
-            width={400}
+            width={650}
             height={600}
             alt="Brenda Hernandez"
+            style={{ borderRadius: "2%" }}
           />
         </Grid>
-        <Grid xs={12} md={7} justifyContent={"center"} alignItems={"center"}>
+        <Grid
+          xs={12}
+          md={5}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Stack
             spacing={4}
             textAlign="center"
@@ -42,20 +58,32 @@ const About = ({ aboutImagePath }: AboutProps) => {
             }}
           >
             <CustomTypography variant="h5">
-              Brenda Hernandez is CEO and Principal Designer of J.2911 Realty,
-              an interior design business committed to giving you the best
-              quality design while sticking to your budget.
+              I am the CEO and principal designer for J.2911 Realty and
+              committed to giving you the best quality designs while sticking to
+              your budget.
             </CustomTypography>
             <CustomTypography variant="h5">
-              J.2911 Realty has practical experience in inhabitant upgrades and
-              providing stunning transformations. We excel in working with our
-              clients and brining their vision to reality.{" "}
+              I have practical experience in inhabitant upgrades and providing
+              stunning transformations. I truly enjoy working with clients and
+              bringing your vision into reality.
             </CustomTypography>
             <CustomTypography variant="h5">
-              We primarily focus on designing short term rentals, work with
-              property owners, real estate investors and real estate agents. Our
-              goal is to create a personalized experience with each of our
-              clients and guarantee a timely delivery.
+              I understand the importance of how your space looks and feels
+              impacts you and others. It brings me pure joy to be able to take a
+              room and create efficiency while adding character.
+            </CustomTypography>
+            <CustomTypography variant="h5">
+              My goal is to curate a personalized experience with each of my
+              clients, guaranteed timely delivery and full satisfaction.
+            </CustomTypography>
+            <CustomTypography variant="h5">
+              I look forwarding to working with you,
+            </CustomTypography>
+            <CustomTypography
+              className="font-great-vibes text-pink-600"
+              sx={{ fontSize: "2rem" }}
+            >
+              Brenda Hernandez
             </CustomTypography>
           </Stack>
         </Grid>

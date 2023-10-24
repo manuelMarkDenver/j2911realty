@@ -25,7 +25,7 @@ const pages: PageProps[] = [
   { text: "Home", path: "/" },
   { text: "About Us", path: "/" },
   { text: "Projects", path: null },
-  { text: "Contact Us", path: "#contact" },
+  { text: "Book A Consultation", path: "#contact" },
 ];
 
 function BottomHeader() {

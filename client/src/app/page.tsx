@@ -20,7 +20,7 @@ export default function Home() {
   const livingroomImages = getImagesFiles("livingroom-designs");
   const gallery = getImagesFiles("gallery");
   const allImages = [...bedroomImages, ...kitchenImages, ...livingroomImages];
-  const aboutImage = getOneImageFilepath("about-us", "about.jpeg");
+  const aboutImage = getOneImageFilepath("about-us", "collage-about-img.webp");
   console.log("🚀 ~ file: page.tsx:23 ~ Home ~ aboutImage:", aboutImage);
   return (
     <>

@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 
 import TopHeader from "./(header components)/top-header";

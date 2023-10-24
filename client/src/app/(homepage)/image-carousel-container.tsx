@@ -8,14 +8,16 @@ const ImageCarouselContainer = (allImages: any) => {
       className={`${!useIsMobile ? "h-screen py-28" : "h-full py-20"}`}
     >
       <ImageCarousel allImages={allImages} />
-      <Typography sx={{ textAlign: "center", fontStyle: "italic", fontSize: { xs: "1rem", md: "1.5rem" } }}>
-        Explore a captivating image gallery that encapsulates the essence of
-        kitchen, bedroom, and living room designs. Discover the perfect fusion
-        of style and functionality in each snapshot. From modern kitchens
-        adorned with elegant countertops to cozy bedrooms that invite
-        relaxation, and living rooms where comfort meets sophistication, our
-        curated collection offers a visual tapestry of inspiring home
-        aesthetics.
+      <Typography
+        sx={{
+          textAlign: "center",
+          fontStyle: "italic",
+          fontSize: { xs: "1rem", md: "1.5rem" },
+        }}
+      >
+        Discover the perfect fusion of style and functionality. From modern
+        kitchen, to elegant living rooms and cozy bedrooms we blend
+        sophistication, comfort and relaxation.
       </Typography>
     </Container>
   );

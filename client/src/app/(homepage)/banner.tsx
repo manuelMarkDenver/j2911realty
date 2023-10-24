@@ -65,7 +65,7 @@ const Banner = () => {
           >
             Beauty Is In The Details
           </Typography>
-          <Link
+          {/* <Link
             href="https://calendly.com/j2911realty"
             target="_blank"
           >
@@ -75,7 +75,7 @@ const Banner = () => {
             >
               Book Your Consultation
             </CustomButton>
-          </Link>
+          </Link> */}
         </Stack>
       </Box>
     </Box>
