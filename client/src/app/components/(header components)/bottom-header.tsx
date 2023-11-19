@@ -69,9 +69,9 @@ function BottomHeader() {
               <Image
                 src="/assets/images/site-logo.png"
                 alt="header site logo"
-                width={120}
-                height={100}
-                className="my-3"
+                width={300}
+                height={70}
+                className="my-10"
               />
             </Link>
           </Box>

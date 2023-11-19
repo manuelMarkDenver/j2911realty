@@ -68,8 +68,8 @@ const Footer = () => {
               <Image
                 src="/assets/images/site-logo.png"
                 alt="site logo"
-                width={180}
-                height={130}
+                width={250}
+                height={50}
               />
               <Typography variant="h6" className="text-slate-700">
                 J2911 Realty

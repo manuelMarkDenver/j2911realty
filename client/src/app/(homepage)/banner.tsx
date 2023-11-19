@@ -4,11 +4,15 @@ import Image from "next/image";
 import {
   Box,
   Button,
+  Container,
   Stack,
   Typography,
   styled,
   useTheme,
 } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+
 import { useIsMobile } from "../lib/helpers";
 
 import banner from "../../../public/assets/images/banner-img-3.jpg";
@@ -27,6 +31,17 @@ const CustomButton = styled(Button)({
   },
 });
 
+const CustomTaskAltIcon = styled(TaskAltIcon)({
+  "&.MuiSvgIcon-root": {
+    fill: "#403f3f",
+  },
+});
+
+const CustomTypography = styled(Typography)({
+  fontFamily: "Arial",
+  color: "#403f3f",
+});
+
 const Banner = () => {
   const theme = useTheme();
 
@@ -38,44 +53,79 @@ const Banner = () => {
         className="w-full h-full object-cover absolute inset-0"
         fill={true}
       />
-      <Box className="absolute inset-0 bg-black opacity-30"></Box>
-      <Box className="absolute inset-0 flex items-center justify-center">
+      <Box className="absolute inset-0 bg-black opacity-10"></Box>
+      <Box className="absolute inset-0 flex items-center justify-start">
         <Stack
           direction="column"
-          className="text-white p-8 text-center"
-          alignItems="center"
+          className="text-white"
+          sx={{
+            backgroundColor: "rgba(255, 182, 193, 0.5)",
+            px: "5%",
+            py: "10%",
+            borderTopRightRadius: "50px",
+            borderBottomRightRadius: "50px",
+          }}
         >
           <Typography
             component="h5"
             sx={{
               fontSize: !useIsMobile() ? "2rem" : "1rem",
-              color: theme.palette.primary.main,
+              color: "#403f3f",
             }}
           >
-            Design The Home of Your Dreams
+            Design the home of your dreams
           </Typography>
           <Typography
             component="h1"
             sx={{
-              color: theme.palette.primary.main,
+              color: "black",
               fontSize: !useIsMobile() ? "5rem" : "2.5rem",
-              mb: "40px",
               fontStyle: "italic",
+              mb: 4,
             }}
           >
             Beauty Is In The Details
           </Typography>
-          {/* <Link
-            href="https://calendly.com/j2911realty"
-            target="_blank"
-          >
+          <Stack gap={2} mb={4}>
+            <Stack
+              gap={1}
+              direction="row"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <CustomTaskAltIcon fontSize="large" sx={{ color: "#fff" }} />
+              <CustomTypography variant="h4">
+                Highest-rated Designers
+              </CustomTypography>
+            </Stack>
+            <Stack
+              gap={1}
+              direction="row"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <CustomTaskAltIcon fontSize="large" sx={{ color: "#fff" }} />
+              <CustomTypography variant="h4">
+                Cost-effective pricing
+              </CustomTypography>
+            </Stack>
+            <Stack
+              gap={1}
+              direction="row"
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <CustomTaskAltIcon fontSize="large" sx={{ color: "#fff" }} />
+              <CustomTypography variant="h4">
+                Simple booking process
+              </CustomTypography>
+            </Stack>
+          </Stack>
+          <Link href="https://calendly.com/j2911realty" target="_blank">
             <CustomButton
               variant="contained"
               size={!useIsMobile() ? "large" : "small"}
             >
               Book Your Consultation
             </CustomButton>
-          </Link> */}
+          </Link>
         </Stack>
       </Box>
     </Box>

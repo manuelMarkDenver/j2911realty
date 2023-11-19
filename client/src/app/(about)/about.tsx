@@ -15,30 +15,8 @@ const About = ({ aboutImagePath }: AboutProps) => {
   const { sm } = useBreakpoints();
 
   return (
-    <Container sx={{ py: 10 }}>
-      <Typography
-        variant="h3"
-        className="font-great-vibes text-center mb-10 text-pink-600"
-      >
-        About Me
-      </Typography>
+    <Box sx={{ px: 10, py: 10 }}>
       <Grid container>
-        <Grid
-          xs={12}
-          md={7}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Image
-            src={aboutImagePath ? aboutImagePath : ""}
-            width={650}
-            height={600}
-            alt="Brenda Hernandez"
-            style={{ borderRadius: "2%" }}
-          />
-        </Grid>
         <Grid
           xs={12}
           md={5}
@@ -57,6 +35,9 @@ const About = ({ aboutImagePath }: AboutProps) => {
               justifyContent: "center",
             }}
           >
+            <Typography variant="h3" className="font-great-vibes text-center">
+              About Me
+            </Typography>
             <CustomTypography variant="h5">
               I am the CEO and principal designer for J.2911 Realty and
               committed to giving you the best quality designs while sticking to
@@ -81,14 +62,30 @@ const About = ({ aboutImagePath }: AboutProps) => {
             </CustomTypography>
             <CustomTypography
               className="font-great-vibes text-pink-600"
-              sx={{ fontSize: "2rem" }}
+              sx={{ fontSize: "3rem" }}
             >
               Brenda Hernandez
             </CustomTypography>
           </Stack>
         </Grid>
+        <Grid
+          xs={12}
+          md={7}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Image
+            src={aboutImagePath ? aboutImagePath : ""}
+            width={650}
+            height={600}
+            alt="Brenda Hernandez"
+            style={{ borderRadius: "2%" }}
+          />
+        </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 

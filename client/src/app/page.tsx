@@ -7,7 +7,9 @@ import Features from "./(homepage)/features";
 import ImageCarouselContainer from "./(homepage)/image-carousel-container";
 import TestimonialContainer from "./(homepage)/testimonials-container";
 import About from "./(about)/about";
-
+import WovenImageList from "./(designs)/components/woven-image-list";
+import { Box } from "@mui/material";
+import OurServices from './(homepage)/our-services';
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
@@ -15,25 +17,20 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const bedroomImages = getImagesFiles("bedroom-designs");
-  const kitchenImages = getImagesFiles("kitchen-designs");
-  const livingroomImages = getImagesFiles("livingroom-designs");
-  const gallery = getImagesFiles("gallery");
-  const allImages = [...bedroomImages, ...kitchenImages, ...livingroomImages];
+  const masonryImages = getImagesFiles("masonry");
   const aboutImage = getOneImageFilepath("about-us", "collage-about-img.webp");
-  console.log("🚀 ~ file: page.tsx:23 ~ Home ~ aboutImage:", aboutImage);
   return (
     <>
       <Banner />
-      <Features
-        allImages={allImages}
-        bedroomImages={bedroomImages}
-        kitchenImages={kitchenImages}
-        livingroomImages={livingroomImages}
-      />
-      <ImageCarouselContainer allImages={gallery} />
+      <Features />
+      {/* <ImageCarouselContainer allImages={gallery} /> */}
+      <Box sx={{ px: 10 }}>
+        <WovenImageList itemData={masonryImages} />
+      </Box>
+
       <About aboutImagePath={aboutImage ? aboutImage : ""} />
-      <TestimonialContainer />
+      {/* <TestimonialContainer /> */}
+      {/* <OurServices /> */}
     </>
   );
 }

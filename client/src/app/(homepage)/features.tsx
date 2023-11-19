@@ -3,13 +3,16 @@ import { Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import FeaturesCard from "../components/features-card";
 import { useBreakpoints, useIsMobile } from "../lib/helpers";
+import WovenImageList from "../(designs)/components/woven-image-list";
 
 const typographyStyles = {
   fontSize: { xs: "2.2rem", md: "3rem" },
   letterSpacing: "1.2px",
 };
 
-const Features = ({ bedroomImages, kitchenImages, livingroomImages }: any) => {
+
+
+const Features = () => {
   return (
     <Container
       id="projects"
@@ -48,53 +51,6 @@ const Features = ({ bedroomImages, kitchenImages, livingroomImages }: any) => {
           All tailored to your budget!
         </Typography>
       </Stack>
-      <Grid
-        container
-        gap={useIsMobile() ? 2 : 0}
-        sx={{
-          justifyContent: "center",
-        }}
-      >
-        <Grid
-          xs={12}
-          md={4}
-          className="md:flex md:justify-center md:items-center"
-        >
-          <FeaturesCard
-            img="/assets/images/features/feature-img-1.jpg"
-            title="Kitchen Designs"
-            description="Modern and functional"
-            link="/kitchen-designs"
-            images={kitchenImages}
-          />
-        </Grid>
-        <Grid
-          xs={12}
-          md={4}
-          className="md:flex md:justify-center md:items-center"
-        >
-          <FeaturesCard
-            img="/assets/images/features/feature-img-2.jpg"
-            title="Living Room Designs"
-            description="Beautiful and elegant spaces"
-            link="/livingroom-designs"
-            images={livingroomImages}
-          />
-        </Grid>
-        <Grid
-          xs={12}
-          md={4}
-          className="md:flex md:justify-center md:items-center"
-        >
-          <FeaturesCard
-            img="/assets/images/features/feature-img-3.jpg"
-            title="Bedroom Designs"
-            description="Stylish, sexy and restful"
-            link="/bedroom-designs"
-            images={bedroomImages}
-          />
-        </Grid>
-      </Grid>
     </Container>
   );
 };
