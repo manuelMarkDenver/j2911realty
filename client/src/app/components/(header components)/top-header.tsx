@@ -22,7 +22,7 @@ const TopHeader = () => {
         alignItems: "center",
         paddingX: "24px",
         paddingY: "10px",
-        backgroundColor: "#db2777",
+        backgroundColor: "#a47180",
       }}
     >
       <Stack direction="row" spacing={1}>

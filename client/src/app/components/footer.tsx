@@ -59,7 +59,7 @@ const Footer = () => {
       className={`${
         !useIsMobile ? "h-screen py-28" : "h-full py-20"
       } flex items-center justify-center`}
-      sx={{ backgroundColor: "#e4e1dd", color: "black" }}
+      sx={{ backgroundColor: "white", color: "black" }}
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
@@ -71,9 +71,6 @@ const Footer = () => {
                 width={250}
                 height={50}
               />
-              <Typography variant="h6" className="text-slate-700">
-                J2911 Realty
-              </Typography>
               <Typography className="text-slate-700">
                 {constants?.CONTACT_NUMBER}
               </Typography>
