@@ -9,7 +9,8 @@ import TestimonialContainer from "./(homepage)/testimonials-container";
 import About from "./(about)/about";
 import WovenImageList from "./(designs)/components/woven-image-list";
 import { Box } from "@mui/material";
-import OurServices from './(homepage)/our-services';
+import OurServices from "./(homepage)/our-services";
+import Projects from './(homepage)/projects';
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
@@ -22,11 +23,11 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Features />
+      {/* <Features /> */}
       {/* <ImageCarouselContainer allImages={gallery} /> */}
-      <Box sx={{ px: 10 }}>
-        <WovenImageList itemData={masonryImages} />
-      </Box>
+      {/* <WovenImageList itemData={masonryImages} /> */}
+
+      <Projects itemData={masonryImages} />
 
       <About aboutImagePath={aboutImage ? aboutImage : ""} />
       {/* <TestimonialContainer /> */}

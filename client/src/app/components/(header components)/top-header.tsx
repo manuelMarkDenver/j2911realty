@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Box, IconButton, Stack, Typography, styled } from "@mui/material";
+import { Box, IconButton, Stack, Typography } from "@mui/material";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -22,7 +22,7 @@ const TopHeader = () => {
         alignItems: "center",
         paddingX: "24px",
         paddingY: "10px",
-        backgroundColor: "#a47180",
+        backgroundColor: "#d66a7f",
       }}
     >
       <Stack direction="row" spacing={1}>

@@ -15,7 +15,7 @@ const customTheme = createTheme({
   },
   typography: {
     fontFamily: [
-      "Times New Roman",
+      "Georgia",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',

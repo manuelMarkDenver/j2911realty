@@ -33,13 +33,14 @@ const CustomButton = styled(Button)({
 
 const CustomTaskAltIcon = styled(TaskAltIcon)({
   "&.MuiSvgIcon-root": {
-    fill: "#403f3f",
+    fill: "#fff",
   },
 });
 
 const CustomTypography = styled(Typography)({
   fontFamily: "Arial",
-  color: "#403f3f",
+  color: "#fff",
+  fontSize: "1.5rem",
 });
 
 const Banner = () => {
@@ -53,71 +54,33 @@ const Banner = () => {
         className="w-full h-full object-cover absolute inset-0"
         fill={true}
       />
-      <Box className="absolute inset-0 bg-black opacity-10"></Box>
-      <Box className="absolute inset-0 flex items-center justify-start">
+      <Box className="absolute inset-0 bg-black opacity-40"></Box>
+      <Box className="absolute inset-0 flex pt-60 justify-start">
         <Stack
           direction="column"
           className="text-white"
           sx={{
-            backgroundColor: "rgba(255, 182, 193, 0.5)",
+            display: "flex",
+            justifyContent: "start",
+            alignItems: "start",
+            // backgroundColor: "rgba(214,106,127, 0.9 )",
             px: "5%",
-            py: "10%",
-            borderTopRightRadius: "50px",
-            borderBottomRightRadius: "50px",
+            // borderRadius: "50px",
+            // borderTopRightRadius: "50px",
+            // borderBottomRightRadius: "50px",
           }}
         >
           <Typography
-            component="h5"
-            sx={{
-              fontSize: !useIsMobile() ? "2rem" : "1rem",
-              color: "#403f3f",
-            }}
-          >
-            Design the home of your dreams
-          </Typography>
-          <Typography
             component="h1"
             sx={{
-              color: "black",
+              color: "#F5F5F5",
               fontSize: !useIsMobile() ? "5rem" : "2.5rem",
               fontStyle: "italic",
-              mb: 4,
+              mb: 2,
             }}
           >
             Beauty Is In The Details
           </Typography>
-          <Stack gap={2} mb={4}>
-            <Stack
-              gap={1}
-              direction="row"
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <CustomTaskAltIcon fontSize="large" sx={{ color: "#fff" }} />
-              <CustomTypography variant="h4">
-                Highest-rated Designers
-              </CustomTypography>
-            </Stack>
-            <Stack
-              gap={1}
-              direction="row"
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <CustomTaskAltIcon fontSize="large" sx={{ color: "#fff" }} />
-              <CustomTypography variant="h4">
-                Cost-effective pricing
-              </CustomTypography>
-            </Stack>
-            <Stack
-              gap={1}
-              direction="row"
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <CustomTaskAltIcon fontSize="large" sx={{ color: "#fff" }} />
-              <CustomTypography variant="h4">
-                Simple booking process
-              </CustomTypography>
-            </Stack>
-          </Stack>
           <Link href="https://calendly.com/j2911realty" target="_blank">
             <CustomButton
               variant="contained"
