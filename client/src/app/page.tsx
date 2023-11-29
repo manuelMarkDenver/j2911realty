@@ -10,7 +10,9 @@ import About from "./(about)/about";
 import WovenImageList from "./(designs)/components/woven-image-list";
 import { Box } from "@mui/material";
 import OurServices from "./(homepage)/our-services";
-import Projects from './(homepage)/projects';
+import Projects from "./(homepage)/projects";
+import Pricing from "./(homepage)/pricing";
+import FAQs from "./(homepage)/components/faqs-accordion";
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
@@ -28,6 +30,8 @@ export default function Home() {
       {/* <WovenImageList itemData={masonryImages} /> */}
 
       <Projects itemData={masonryImages} />
+      <Pricing />
+      <FAQs />
 
       <About aboutImagePath={aboutImage ? aboutImage : ""} />
       {/* <TestimonialContainer /> */}

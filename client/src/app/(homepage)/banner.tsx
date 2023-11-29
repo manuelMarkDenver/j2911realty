@@ -17,19 +17,7 @@ import { useIsMobile } from "../lib/helpers";
 
 import banner from "../../../public/assets/images/banner-img-3.jpg";
 import Link from "next/link";
-
-const CustomButton = styled(Button)({
-  width: "300px",
-  padding: "15px 0",
-  fontWeight: "bold",
-  color: "white",
-  backgroundColor: "#ed4b82",
-  letterSpacing: "1.5px",
-  "&:hover": {
-    backgroundColor: "white",
-    color: "black",
-  },
-});
+import CustomButton from './components/custom-button';
 
 const CustomTaskAltIcon = styled(TaskAltIcon)({
   "&.MuiSvgIcon-root": {
@@ -82,12 +70,7 @@ const Banner = () => {
             Beauty Is In The Details
           </Typography>
           <Link href="https://calendly.com/j2911realty" target="_blank">
-            <CustomButton
-              variant="contained"
-              size={!useIsMobile() ? "large" : "small"}
-            >
-              Book Your Consultation
-            </CustomButton>
+            <CustomButton title="Book a Consultation" />
           </Link>
         </Stack>
       </Box>
