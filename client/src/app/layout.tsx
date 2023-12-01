@@ -10,6 +10,7 @@ import { ThemeProvider } from "@emotion/react";
 import customTheme from "./styling/customTheme";
 
 import { Great_Vibes } from "next/font/google";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 // If loading a variable font, you don't need to specify the font weight
 const great_vibes = Great_Vibes({
@@ -26,12 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${great_vibes.variable}`}>
       <body>
-        <ThemeProvider theme={customTheme}>
-          <CssBaseline />
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <ParallaxProvider>
+          <ThemeProvider theme={customTheme}>
+            <CssBaseline />
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </ParallaxProvider>
       </body>
     </html>
   );

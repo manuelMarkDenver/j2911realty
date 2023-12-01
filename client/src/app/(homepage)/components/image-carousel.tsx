@@ -1,63 +1,44 @@
 "use client";
 
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../../styling/carousel-styling";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react"; // import from 'keen-slider/react.es' for to get an ES module
 
 import { Box, Container, Typography } from "@mui/material";
 
 import { useIsMobile } from "@/app/lib/helpers";
 
 const ImageCarousel = ({ allImages }: { allImages: any }) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: false,
-  };
-
-  // const transformedImagesPaths = allImages?.allImages?.map((item: string) =>
-  //   pathTransformer(item)
-  // );
+  const [sliderRef] = useKeenSlider({
+    mode: "snap",
+    slides: {
+      origin: "center",
+      perView: 2,
+      spacing: 100,
+    },
+  });
 
   if (allImages?.length === 0) return <p>No images</p>;
 
   if (!allImages) return <p>Loading images...</p>;
 
   return (
-    <Container
-      className={`${!useIsMobile ? "h-screen py-28" : "h-full py-20"}`}
-    >
-      <Box>
-        <Typography
-          variant="h3"
-          sx={{ textAlign: "center", marginBottom: { md: "30px" } }}
-          className="font-great-vibes"
-        >
-          {" "}
-          Images Gallery
-        </Typography>
-        <Slider {...settings}>
-          {allImages?.allImages.map((image: string, index: number) => {
-            return (
-              <Box key={index}>
-                <Image
-                  src={image}
-                  alt={image}
-                  width={1200}
-                  height={600}
-                  style={{ objectFit: "cover" }}
-                />
-              </Box>
-            );
-          })}
-        </Slider>
-      </Box>
-    </Container>
+    <Box ref={sliderRef} className="keen-slider">
+      {allImages?.allImages.map((image: string, index: number) => {
+        return (
+          <Box key={index} sx={{ width: "1800px", height: "80dvh" }}>
+            <Image
+              src={image}
+              alt={image}
+              width={1000}
+              height={800}
+              style={{ objectFit: "cover" }}
+              className="keen-slider__slide"
+            />
+          </Box>
+        );
+      })}
+    </Box>
   );
 };
 

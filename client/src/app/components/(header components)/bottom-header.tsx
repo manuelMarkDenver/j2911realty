@@ -57,7 +57,7 @@ function BottomHeader() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: secondaryColor }}>
+    <AppBar position="relative" sx={{ backgroundColor: secondaryColor }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
@@ -69,8 +69,8 @@ function BottomHeader() {
               <Image
                 src="/assets/images/site-logo.png"
                 alt="header site logo"
-                width={300}
-                height={70}
+                width={400}
+                height={80}
                 className="my-10"
               />
             </Link>
@@ -129,7 +129,6 @@ function BottomHeader() {
                     </Typography>
                   </MenuItem>
                 ) : (
-                  // For other pages, render a simple <p>test</p> element.
                   <MenuItem key={index} onClick={handleCloseNavMenu}>
                     <Link
                       href={page?.path ? page?.path : ""}
@@ -181,7 +180,6 @@ function BottomHeader() {
                   </Typography>
                 </MenuItem>
               ) : (
-                // For other pages, render a simple <p>test</p> element.
                 <MenuItem key={index} onClick={handleCloseNavMenu}>
                   <Link
                     href={page?.path ? page?.path : ""}
@@ -198,7 +196,7 @@ function BottomHeader() {
               )
             )}
           </Box>
-          <Menu 
+          <Menu
             id="basic-menu"
             anchorEl={anchorEl}
             open={open}
@@ -207,15 +205,18 @@ function BottomHeader() {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "1.3rem" }}>
-              <Link
-                href="/kitchen-designs"
-                className="no-underline text-black"
-              >
+            <MenuItem
+              onClick={handleDesignMenuClose}
+              sx={{ fontSize: "1.3rem" }}
+            >
+              <Link href="/kitchen-designs" className="no-underline text-black">
                 Kitchen Designs
               </Link>
             </MenuItem>
-            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "1.3rem" }}>
+            <MenuItem
+              onClick={handleDesignMenuClose}
+              sx={{ fontSize: "1.3rem" }}
+            >
               <Link
                 href="/livingroom-designs"
                 className="no-underline text-black"
@@ -223,11 +224,11 @@ function BottomHeader() {
                 Living Room Designs
               </Link>
             </MenuItem>
-            <MenuItem onClick={handleDesignMenuClose} sx={{ fontSize: "1.3rem" }}>
-              <Link
-                href="/bedroom-designs"
-                className="no-underline text-black"
-              >
+            <MenuItem
+              onClick={handleDesignMenuClose}
+              sx={{ fontSize: "1.3rem" }}
+            >
+              <Link href="/bedroom-designs" className="no-underline text-black">
                 Bedroom Designs
               </Link>
             </MenuItem>

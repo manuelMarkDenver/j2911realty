@@ -13,6 +13,7 @@ import OurServices from "./(homepage)/our-services";
 import Projects from "./(homepage)/projects";
 import Pricing from "./(homepage)/pricing";
 import FAQs from "./(homepage)/components/faqs-accordion";
+import Projects2 from "./(homepage)/projects-2";
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
@@ -26,16 +27,21 @@ export default function Home() {
     <>
       <Banner />
       {/* <Features /> */}
-      {/* <ImageCarouselContainer allImages={gallery} /> */}
       {/* <WovenImageList itemData={masonryImages} /> */}
 
-      <Projects itemData={masonryImages} />
+      {/* <Projects itemData={masonryImages} /> */}
+      <Projects2 itemData={masonryImages} />
+
+      <ImageCarouselContainer allImages={masonryImages} />
+
+      <OurServices />
+
       <Pricing />
-      <FAQs />
+
+      {/* <FAQs /> */}
 
       <About aboutImagePath={aboutImage ? aboutImage : ""} />
       {/* <TestimonialContainer /> */}
-      {/* <OurServices /> */}
     </>
   );
 }

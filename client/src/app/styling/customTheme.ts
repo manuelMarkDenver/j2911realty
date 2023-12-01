@@ -10,12 +10,12 @@ const customTheme = createTheme({
       main: "#F8F9F4",
     },
     background: {
-      default: "#E4E1DD", // Replace this with your desired body background color
+      default: "#fff", // Replace this with your desired body background color
     },
   },
   typography: {
     fontFamily: [
-      "Georgia",
+      "Cormorant Garamond",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',

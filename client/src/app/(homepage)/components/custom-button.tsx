@@ -32,7 +32,7 @@ const CustomButton = (props: CustomButtonProps) => {
       size={!useIsMobile() ? "large" : "small"}
       sx={{ ...BaseButtonStyles, ...customStyles }} // Merge styles
     >
-      {title ? title : "Button"}
+      {title ? title : "Book Now"}
     </CustomButtonStyled>
   );
 };

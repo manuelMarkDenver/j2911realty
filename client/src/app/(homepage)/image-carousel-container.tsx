@@ -1,25 +1,54 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { useIsMobile } from "../lib/helpers";
 import ImageCarousel from "./components/image-carousel";
 
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+
+import WestIcon from "@mui/icons-material/West";
+import EastIcon from "@mui/icons-material/East";
+
 const ImageCarouselContainer = (allImages: any) => {
   return (
-    <Container
-      className={`${!useIsMobile ? "h-screen py-28" : "h-full py-20"}`}
-    >
-      <ImageCarousel allImages={allImages} />
-      <Typography
+    <>
+      <Box
         sx={{
-          textAlign: "center",
-          fontStyle: "italic",
-          fontSize: { xs: "1rem", md: "1.5rem" },
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100%",
+          pl: 10,
         }}
       >
-        Discover the perfect fusion of style and functionality. From modern
-        kitchen, to elegant living rooms and cozy bedrooms we blend
-        sophistication, comfort and relaxation.
-      </Typography>
-    </Container>
+        <Typography
+          sx={{
+            fontSize: "5rem",
+            writingMode: "vertical-lr",
+            transform: "rotate(180deg)",
+          }}
+        >
+          My Projects
+        </Typography>
+        <ImageCarousel allImages={allImages} />
+      </Box>
+      <Stack
+        direction="row"
+        alignItems="center"
+        gap={5}
+        sx={{
+          mx: "auto",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <WestIcon sx={{ color: "#bababa" }} />
+        <Typography variant="h5" sx={{ color: "#bababa" }}>
+          Scroll to see more projects
+        </Typography>
+        <EastIcon sx={{ color: "#bababa" }} />
+      </Stack>
+    </>
   );
 };
 

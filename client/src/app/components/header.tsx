@@ -6,7 +6,7 @@ import BottomHeader from "./(header components)/bottom-header";
 export default function Header() {
   return (
     <>
-      <TopHeader />
+      {/* <TopHeader /> */}
       <BottomHeader />
     </>
   );

@@ -35,7 +35,6 @@ const Pricing = () => {
                 price="$250.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
             <Grid xs={3} item>
@@ -44,7 +43,6 @@ const Pricing = () => {
                 price="$500.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
             <Grid xs={3} item>
@@ -53,7 +51,6 @@ const Pricing = () => {
                 price="$800.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
             <Grid xs={3} item>
@@ -62,7 +59,6 @@ const Pricing = () => {
                 price="$500.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
           </Grid>
@@ -86,7 +82,6 @@ const Pricing = () => {
                 price="$500.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
             <Grid xs={3} item>
@@ -95,7 +90,6 @@ const Pricing = () => {
                 price="$700.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
             <Grid xs={3} item>
@@ -104,7 +98,6 @@ const Pricing = () => {
                 price="$900.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
             <Grid xs={3} item>
@@ -113,7 +106,6 @@ const Pricing = () => {
                 price="$1000.00"
                 priceSubheader="per room"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                buttonText="Book a Consultation"
               />
             </Grid>
           </Grid>
