@@ -35,7 +35,7 @@ const Banner = () => {
   return (
     <ParallaxBanner
       style={{
-        height: "150vh",
+        height: "200vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -43,7 +43,7 @@ const Banner = () => {
       }}
     >
       <ParallaxBannerLayer
-        speed={-70}
+        speed={-100}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -51,7 +51,7 @@ const Banner = () => {
         }}
       >
         <Image
-          src={banner3}
+          src={banner}
           alt="Background Image"
           fill={true}
           objectFit="contain"

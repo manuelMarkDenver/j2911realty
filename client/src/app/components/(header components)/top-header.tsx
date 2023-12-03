@@ -22,23 +22,23 @@ const TopHeader = () => {
         alignItems: "center",
         paddingX: "24px",
         paddingY: "10px",
-        backgroundColor: "#d66a7f",
+        backgroundColor: "#FD8C91",
       }}
     >
       <Stack direction="row" spacing={1}>
         <IconButton sx={{ paddingLeft: 0 }}>
           <Link href={constants?.FB_ACCOUNT} style={{ color: iconColor }}>
-            <FacebookIcon fontSize="large" />
+            <FacebookIcon fontSize="medium" />
           </Link>
         </IconButton>
         <IconButton>
           <Link href={constants?.FB_PAGE} style={{ color: iconColor }}>
-            <FacebookIcon fontSize="large" />
+            <FacebookIcon fontSize="medium" />
           </Link>
         </IconButton>
         <IconButton>
           <Link href={constants?.IG_ACCOUNT} style={{ color: iconColor }}>
-            <InstagramIcon fontSize="large" />
+            <InstagramIcon fontSize="medium" />
           </Link>
         </IconButton>
         <IconButton>

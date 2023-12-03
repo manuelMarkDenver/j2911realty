@@ -23,6 +23,8 @@ const ImageCarouselContainer = (allImages: any) => {
         <Typography
           sx={{
             fontSize: "5rem",
+            fontWeight: 300,
+            color: "#a4727e",
             writingMode: "vertical-lr",
             transform: "rotate(180deg)",
           }}
@@ -42,11 +44,11 @@ const ImageCarouselContainer = (allImages: any) => {
           alignItems: "center",
         }}
       >
-        <WestIcon sx={{ color: "#bababa" }} />
-        <Typography variant="h5" sx={{ color: "#bababa" }}>
+        {/* <WestIcon sx={{ color: "#bababa" }} /> */}
+        <Typography variant="h5" sx={{ color: "#bababa", fontStyle: "italic" }}>
           Scroll to see more projects
         </Typography>
-        <EastIcon sx={{ color: "#bababa" }} />
+        {/* <EastIcon sx={{ color: "#bababa" }} /> */}
       </Stack>
     </>
   );

@@ -15,27 +15,22 @@ const About = ({ aboutImagePath }: AboutProps) => {
   const { sm } = useBreakpoints();
 
   return (
-    <Box sx={{ px: 10, py: 10 }}>
+    <Box sx={{ py: 20 }}>
       <Grid container>
         <Grid
           xs={12}
           md={5}
           sx={{
             display: "flex",
-            justifyContent: "center",
             alignItems: "center",
+            backgroundColor: "#F7D2CC",
           }}
         >
-          <Stack
-            spacing={4}
-            textAlign="center"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Typography variant="h3" className="font-great-vibes text-center">
+          <Stack spacing={4} textAlign="left" px={10} py={10}>
+            <Typography
+              variant="h3"
+              sx={{ color: "#a4727e", fontStyle: "italic", fontWeight: "300" }}
+            >
               About Me
             </Typography>
             <CustomTypography variant="h5">
@@ -60,9 +55,11 @@ const About = ({ aboutImagePath }: AboutProps) => {
             <CustomTypography variant="h5">
               I look forwarding to working with you,
             </CustomTypography>
+            <br />
+            <br />
             <CustomTypography
-              className="font-great-vibes text-pink-600"
-              sx={{ fontSize: "3rem" }}
+              className="font-great-vibes"
+              sx={{ fontSize: "3rem", color: "#EF164F" }}
             >
               Brenda Hernandez
             </CustomTypography>
@@ -74,14 +71,15 @@ const About = ({ aboutImagePath }: AboutProps) => {
           sx={{
             display: "flex",
             justifyContent: "center",
+            height: "100dvh",
+            width: "100%",
+            position: "relative",
           }}
         >
           <Image
             src={aboutImagePath ? aboutImagePath : ""}
-            width={650}
-            height={600}
+            fill={true}
             alt="Brenda Hernandez"
-            style={{ borderRadius: "2%" }}
           />
         </Grid>
       </Grid>

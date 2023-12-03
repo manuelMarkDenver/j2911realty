@@ -3,111 +3,67 @@
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import PricingCard from "./components/pricing-card";
 
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import CreateIcon from "@mui/icons-material/Create";
+import HomeIcon from "@mui/icons-material/Home";
+
+type ProcessProps = {
+  title: string;
+  steps: string[];
+  icon: JSX.Element;
+};
+
+const processes: ProcessProps[] = [
+  {
+    title: "Step 1: Explore Your Vision",
+    steps: [
+      "Book your 1-2 Hour In Person Consult",
+      "Every space is a fresh opportunity for creativity. Schedule your consultation today and let’s discuss your vision and bring it to life.",
+    ],
+    icon: <EventAvailableIcon sx={{ fontSize: "5rem" }} />,
+  },
+  {
+    title: "Step 2: Designing Dreams Together",
+    steps: [
+      "We will develop your initial schematic designs together. Then, we will provide you with a budget that makes sense for you.",
+      "Next, we design your palette, by creating the vision, by setting the stage, by giving you a glimpse of colors and much more, you’re seeing what your interiors will look like, and equally important, what they’ll feel like.",
+    ],
+    icon: <CreateIcon sx={{ fontSize: "5rem" }} />,
+  },
+  {
+    title: "Step 3: A New Beginning, Simply Yours",
+    steps: [
+      "Last, We’ve got everything in our warehouse, inspected, organized, and ready for installation. We take care of all the big heavy lifting",
+      "Our goal is to  meet your every need so that you can simply walk in and live your life. And your lifestyle!",
+    ],
+    icon: <HomeIcon sx={{ fontSize: "5rem" }} />,
+  },
+];
+
 const Pricing = () => {
   return (
-    <Container maxWidth="xl" sx={{ py: 20 }}>
+    <Container maxWidth="xl">
       <Typography
         textAlign="center"
         variant="h2"
         sx={{
           mb: 5,
+          fontStyle: "italic",
+          color: "#a4727e",
         }}
       >
-        Pricing
+        Let&apos;s Do Magic Together
       </Typography>
 
       {/* Occupied Homes */}
-      <Stack spacing={10}>
+      <Stack spacing={10} sx={{ pt: 5 }}>
         <Box>
-          <Typography
-            variant="h3"
-            sx={{
-              mb: 5,
-              textAlign: "center",
-            }}
-          >
-            Occupied Homes
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid xs={3} item>
-              <PricingCard
-                title="2 Hour Walkthrough"
-                price="$250.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-            <Grid xs={3} item>
-              <PricingCard
-                title="4 Hour Staging (3-4 rooms)"
-                price="$500.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-            <Grid xs={3} item>
-              <PricingCard
-                title="8 Hour Staging (5-7 rooms)"
-                price="$800.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-            <Grid xs={3} item>
-              <PricingCard
-                title="Maximum cost (per hour)"
-                price="$500.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-          </Grid>
-        </Box>
-
-        {/* 111 */}
-        <Box>
-          <Typography
-            variant="h3"
-            sx={{
-              mb: 5,
-              textAlign: "center",
-            }}
-          >
-            Vacant Staging
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid xs={3} item>
-              <PricingCard
-                title="1200 Sq Ft."
-                price="$500.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-            <Grid xs={3} item>
-              <PricingCard
-                title="1200-3000 Sq Ft."
-                price="$700.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-            <Grid xs={3} item>
-              <PricingCard
-                title="2000-3000 Sq Ft."
-                price="$900.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
-            <Grid xs={3} item>
-              <PricingCard
-                title="3000-4000 Sq Ft."
-                price="$1000.00"
-                priceSubheader="per room"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-              />
-            </Grid>
+          <Grid container spacing={10}>
+            {processes.map((process) => (
+              <Grid xs={4} item key={process.title}>
+                <PricingCard process={process} />
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Stack>

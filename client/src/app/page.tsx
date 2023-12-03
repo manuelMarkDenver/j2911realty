@@ -12,7 +12,6 @@ import { Box } from "@mui/material";
 import OurServices from "./(homepage)/our-services";
 import Projects from "./(homepage)/projects";
 import Pricing from "./(homepage)/pricing";
-import FAQs from "./(homepage)/components/faqs-accordion";
 import Projects2 from "./(homepage)/projects-2";
 
 export const metadata: Metadata = {
@@ -37,8 +36,6 @@ export default function Home() {
       <OurServices />
 
       <Pricing />
-
-      {/* <FAQs /> */}
 
       <About aboutImagePath={aboutImage ? aboutImage : ""} />
       {/* <TestimonialContainer /> */}
