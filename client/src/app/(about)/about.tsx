@@ -15,7 +15,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
   const { sm } = useBreakpoints();
 
   return (
-    <Box sx={{ py: 20 }}>
+    <Box sx={{ py: 20 }} id="about">
       <Grid container>
         <Grid
           xs={12}

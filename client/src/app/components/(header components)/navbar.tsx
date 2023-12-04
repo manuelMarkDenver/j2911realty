@@ -63,11 +63,11 @@ const navItems = [
   },
   {
     text: "About",
-    path: "/",
+    path: "/#about",
   },
   {
     text: "Projects",
-    path: null,
+    path: "/#projects",
   },
   {
     text: "Book A Consultation",
@@ -223,17 +223,18 @@ export default function Navbar(props: Props) {
                 </Stack>
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   {navItems.map((item) => (
-                    <Button
-                      key={item?.text}
-                      sx={{
-                        color: "#a4727e",
-                        fontSize: !lgDown ? "1.5rem" : "1rem",
-                        fontWeight: "300",
-                        mx: 2,
-                      }}
-                    >
-                      {item?.text}
-                    </Button>
+                    <Link href={item.path} key={item?.text}>
+                      <Button
+                        sx={{
+                          color: "#a4727e",
+                          fontSize: !lgDown ? "1.5rem" : "1rem",
+                          fontWeight: "300",
+                          mx: 2,
+                        }}
+                      >
+                        {item?.text}
+                      </Button>
+                    </Link>
                   ))}
                 </Box>
               </Stack>

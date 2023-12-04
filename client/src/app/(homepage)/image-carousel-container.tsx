@@ -11,6 +11,7 @@ const ImageCarouselContainer = (allImages: any) => {
   return (
     <>
       <Box
+        id="projects"
         sx={{
           display: "flex",
           justifyContent: "center",
