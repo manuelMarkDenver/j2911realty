@@ -23,6 +23,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useBreakpoints } from "@/app/lib/helpers";
 
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import constants from "@/app/lib/contants";
+
+const iconColor = "#a4727e";
+
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -147,7 +154,7 @@ export default function Navbar(props: Props) {
                 <Image
                   src="/assets/images/favicon.png"
                   alt="header site logo"
-                  width={100}
+                  width={70}
                   height={50}
                 />
               </Stack>
@@ -170,11 +177,50 @@ export default function Navbar(props: Props) {
                     <Image
                       src="/assets/images/site-logo.png"
                       alt="header site logo"
-                      width={!lgDown ? 700 : 300}
-                      height={!lgDown ? 150 : 70}
+                      width={!lgDown ? 450 : 300}
+                      height={!lgDown ? 80 : 70}
                     />
                   </Box>
                 </Link>
+                <Stack direction="row" spacing={1}>
+                  <IconButton sx={{ paddingLeft: 0 }}>
+                    <Link
+                      href={constants?.FB_ACCOUNT}
+                      style={{ color: iconColor }}
+                    >
+                      <FacebookIcon fontSize="medium" />
+                    </Link>
+                  </IconButton>
+                  <IconButton>
+                    <Link
+                      href={constants?.FB_PAGE}
+                      style={{ color: iconColor }}
+                    >
+                      <FacebookIcon fontSize="medium" />
+                    </Link>
+                  </IconButton>
+                  <IconButton>
+                    <Link
+                      href={constants?.IG_ACCOUNT}
+                      style={{ color: iconColor }}
+                    >
+                      <InstagramIcon fontSize="medium" />
+                    </Link>
+                  </IconButton>
+                  <IconButton>
+                    <Link
+                      href={constants?.AIRBNB_ACCOUNT}
+                      style={{ color: iconColor }}
+                    >
+                      <Image
+                        src="/assets/images/airbnb-logo-dark.png"
+                        alt="Airbnb Logo"
+                        width={20}
+                        height={20}
+                      />
+                    </Link>
+                  </IconButton>
+                </Stack>
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   {navItems.map((item) => (
                     <Button

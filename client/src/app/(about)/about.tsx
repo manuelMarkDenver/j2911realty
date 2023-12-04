@@ -22,7 +22,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
           md={5}
           sx={{
             display: "flex",
-            alignItems: "center",
+            alignItems: "start",
             backgroundColor: "#F7D2CC",
           }}
         >
@@ -59,7 +59,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
             <br />
             <CustomTypography
               className="font-great-vibes"
-              sx={{ fontSize: "3rem", color: "#EF164F" }}
+              sx={{ fontSize: "3rem", color: "#a4727e" }}
             >
               Brenda Hernandez
             </CustomTypography>

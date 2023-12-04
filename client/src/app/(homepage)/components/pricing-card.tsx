@@ -37,7 +37,7 @@ const PricingCard = (props: PricingCardProps) => {
   return (
     <Card
       raised={true}
-      sx={{ borderRadius: "20px", textAlign: "center", py: 5 }}
+      sx={{ borderRadius: "20px", textAlign: "center", py: 5, height: "100%" }}
     >
       <CardHeader
         component={() => (
@@ -76,7 +76,11 @@ const PricingCard = (props: PricingCardProps) => {
         )}
         sx={{ bgcolor: "#f7d2cc" }}
       />
-      <CardContent>
+      <CardContent sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}>
         <List>
           {process?.steps?.map((step, index) => (
             <ListItem
@@ -108,7 +112,7 @@ const PricingCard = (props: PricingCardProps) => {
           ))}
         </List>
         {process?.title === "Step 1: Explore Your Vision" && (
-          <>
+          <Box>
             <Typography
               variant="body2"
               sx={{ color: "gray", fontStyle: "italic" }}
@@ -121,14 +125,8 @@ const PricingCard = (props: PricingCardProps) => {
             >
               *A $250 credit is applied to balance when you book our services
             </Typography>
-          </>
+          </Box>
         )}
-        {/* <CardActionArea sx={{ display: "flex", justifyContent: "center" }}>
-          <CustomButton
-            title={buttonText}
-            customStyles={{ fontSize: ".8rem", width: "250px" }}
-          />
-        </CardActionArea> */}
       </CardContent>
     </Card>
   );

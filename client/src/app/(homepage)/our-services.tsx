@@ -35,7 +35,7 @@ const itemVariants: Variants = {
   onscreen: {
     x: 50,
     transition: {
-      duration: 2,
+      duration: 1,
     },
   },
 };
@@ -48,7 +48,9 @@ const easeInVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 3,
+      delay: 1
     },
+    
   },
 };
 
@@ -125,14 +127,18 @@ const OurServices = () => {
             ...gridWithTextsStyles,
           }}
         >
-          <Box position="relative" width={800} height={800}>
-            <Image
-              src={logo}
-              alt="Background Image"
-              fill={true}
-              objectFit="contain"
-            />
-          </Box>
+          <motion.div initial="offscreen" whileInView="onscreen">
+            <Box position="relative" width={800} height={800}>
+              <motion.div variants={easeInVariants}>
+                <Image
+                  src={logo}
+                  alt="Background Image"
+                  fill={true}
+                  objectFit="contain"
+                />
+              </motion.div>
+            </Box>
+          </motion.div>
         </Grid>
       </Grid>
     </Grid>

@@ -30,7 +30,6 @@ const CustomGridItem: any = styled(Grid)({
   alignItems: "start",
   justifyContent: "center",
   width: "100%",
-  margin: "auto 0",
 });
 
 const StyledTextareaAutosize = styled(TextareaAutosize)({
@@ -51,7 +50,7 @@ const StyledButton = styled(Button)({
 });
 
 const Footer = () => {
-  const iconColor = "#696765";
+  const iconColor = "#a4727e";
 
   return (
     <Box
@@ -63,25 +62,26 @@ const Footer = () => {
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
-          <CustomGridItem item xs={12} md={4}>
+          <CustomGridItem item xs={12} md={6}>
             <Stack gap={1}>
               <Image
                 src="/assets/images/site-logo.png"
                 alt="site logo"
-                width={250}
-                height={50}
+                width={600}
+                height={120}
               />
-              <Typography className="text-slate-700">
+              <Typography className="text-slate-700" sx={{ fontSize: "1.5rem" }}>
                 {constants?.CONTACT_NUMBER}
               </Typography>
               <a
                 href="mailto:test@j2911realty.com"
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", }}
               >
                 <Typography
                   className="text-slate-700 italic"
                   sx={{
                     textDecoration: "none",
+                    fontSize: "1.5rem",
                     "&:hover": {
                       cursor: "pointer",
                     },
@@ -90,7 +90,7 @@ const Footer = () => {
                   {constants?.EMAIL}
                 </Typography>
               </a>
-              <Stack direction="row" spacing={1}>
+              <Stack direction="row" spacing={1} justifyContent="center">
                 <IconButton sx={{ paddingLeft: 0 }}>
                   <Link
                     href={constants?.FB_ACCOUNT}
@@ -118,7 +118,7 @@ const Footer = () => {
                     style={{ color: iconColor }}
                   >
                     <Image
-                      src="/assets/images/airbnb-logo.png"
+                      src="/assets/images/airbnb-logo-dark.png"
                       alt="Airbnb Logo"
                       width={20}
                       height={20}
@@ -128,7 +128,7 @@ const Footer = () => {
               </Stack>
             </Stack>
           </CustomGridItem>
-          <CustomGridItem item xs={12} md={4}>
+          <CustomGridItem item xs={12} md={6}>
             <Stack gap={2}>
               <Button
                 variant="text"
@@ -182,14 +182,15 @@ const Footer = () => {
               </Button>
             </Stack>
           </CustomGridItem>
-          <CustomGridItem item xs={12} md={4}>
+          {/* <CustomGridItem item xs={12} md={4}>
             <Stack direction="column" sx={{ width: "100%" }}>
               <Typography
                 sx={{ marginBottom: "30px" }}
                 align="left"
                 className="text-slate-700"
+                variant="h6"
               >
-                Feel free to send us a message.
+                Feel free to send us a message @ blhernandez0923@gmail.com
               </Typography>
               <Stack gap={2}>
                 <TextField
@@ -226,7 +227,7 @@ const Footer = () => {
                 <Typography>Send</Typography>
               </StyledButton>
             </Stack>
-          </CustomGridItem>
+          </CustomGridItem> */}
         </Grid>
       </Container>
     </Box>

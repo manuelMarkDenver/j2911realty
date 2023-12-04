@@ -81,9 +81,9 @@ const Projects2 = (props: ProjectsProps) => {
               >
                 We thrive in taking homes and accenting their natural beauty
                 while bringing together modern design and timeless beauty. We
-                are designing homes that hold your personality and embark each
-                project with new eyes. We are committed to giving you an
-                elevated experience while adhering to your budget.
+                are designing spaces that hold your personality. We are
+                committed to giving you an elevated experience while adhering to
+                your budget.
               </Typography>
             </motion.div>
           </Grid>

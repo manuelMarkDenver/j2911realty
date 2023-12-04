@@ -52,7 +52,7 @@ const Pricing = () => {
           color: "#a4727e",
         }}
       >
-        Let&apos;s Do Magic Together
+        Your Personality, Our Expertise
       </Typography>
 
       {/* Occupied Homes */}

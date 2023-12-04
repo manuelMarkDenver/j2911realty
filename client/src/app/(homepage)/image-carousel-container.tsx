@@ -48,7 +48,6 @@ const ImageCarouselContainer = (allImages: any) => {
         <Typography variant="h5" sx={{ color: "#bababa", fontStyle: "italic" }}>
           Scroll to see more projects
         </Typography>
-        {/* <EastIcon sx={{ color: "#bababa" }} /> */}
       </Stack>
     </>
   );
