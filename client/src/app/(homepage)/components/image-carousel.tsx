@@ -26,13 +26,13 @@ const ImageCarousel = ({ allImages }: { allImages: any }) => {
     <Box ref={sliderRef} className="keen-slider">
       {allImages?.allImages.map((image: string, index: number) => {
         return (
-          <Box key={index} sx={{ width: "1800px", height: "80dvh" }}>
+          <Box key={index} sx={{ width: "100%", height: "80dvh" }}>
             <Image
               src={image}
               alt={image}
               width={1000}
-              height={800}
-              style={{ objectFit: "cover" }}
+              height={1000}
+              style={{ objectFit: "contain" }}
               className="keen-slider__slide"
             />
           </Box>
