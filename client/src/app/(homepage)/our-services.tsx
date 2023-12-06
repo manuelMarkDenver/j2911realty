@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Box, Grid, Typography } from "@mui/material";
 
 import logo from "/public/assets/images/favicon.png";
-import banner2 from "/public/assets/images/features/feature-img-4.webp";
+import banner2 from "/public/assets/images/features/feature-img-4.jpg";
 import banner3 from "/public/assets/images/features/feature-img-3.jpg";
 import { motion, Variants } from "framer-motion";
 
