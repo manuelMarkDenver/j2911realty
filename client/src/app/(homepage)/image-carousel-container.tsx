@@ -16,7 +16,7 @@ const ImageCarouselContainer = (allImages: any) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh",
+          height: "auto",
           width: "100%",
           pl: 10,
         }}

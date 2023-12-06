@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Box, Grid, Typography } from "@mui/material";
 
 import logo from "/public/assets/images/favicon.png";
-import banner2 from "/public/assets/images/mission-vision/mission-vision-img.jpg";
+import banner2 from "/public/assets/images/features/feature-img-4.webp";
 import banner3 from "/public/assets/images/features/feature-img-3.jpg";
 import { motion, Variants } from "framer-motion";
 
@@ -62,10 +62,10 @@ const OurServices = () => {
           item
           xs={6}
           sx={{
-            backgroundColor: "#F7D2CC",
+            backgroundColor: "#ffe9e6",
             ...gridWithTextsStyles,
           }}
-        >
+      >
           <motion.div
             className="card-container"
             initial="offscreen"

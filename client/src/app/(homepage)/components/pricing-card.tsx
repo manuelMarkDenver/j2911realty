@@ -55,12 +55,13 @@ const PricingCard = (props: PricingCardProps) => {
                 bgcolor: "#f7d2cc",
               }}
             >
-              <AssignmentTurnedInIcon
+              {/* <AssignmentTurnedInIcon
                 sx={{
-                  color: "#a4727e",
+                  color: "#FD8C91",
                   fontSize: "5rem",
                 }}
-              />
+              /> */}
+              {process?.icon}
             </Box>
             <Typography
               variant="h4"
@@ -68,19 +69,19 @@ const PricingCard = (props: PricingCardProps) => {
                 color: "#a4727e",
               }}
             >
-              {process?.title === "Step 1: Explore Your Vision"
-                ? `${process?.title}\*`
-                : process?.title}
+              {process?.title}
             </Typography>
           </Stack>
         )}
         sx={{ bgcolor: "#f7d2cc" }}
       />
-      <CardContent sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-      }}>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}
+      >
         <List>
           {process?.steps?.map((step, index) => (
             <ListItem
@@ -110,23 +111,20 @@ const PricingCard = (props: PricingCardProps) => {
               />
             </ListItem>
           ))}
+          <ListItem>
+            {process?.title === "Step 1: Explore Your Vision" && (
+              <Box textAlign="left">
+                <Typography
+                  variant="body2"
+                  sx={{ color: "gray", fontStyle: "italic" }}
+                >
+                  There is a $250 in person consultant fee. A $250 credit is
+                  applied to balance when you book our services
+                </Typography>
+              </Box>
+            )}
+          </ListItem>
         </List>
-        {process?.title === "Step 1: Explore Your Vision" && (
-          <Box>
-            <Typography
-              variant="body2"
-              sx={{ color: "gray", fontStyle: "italic" }}
-            >
-              *There is a $250 in person consultant fee
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "gray", fontStyle: "italic" }}
-            >
-              *A $250 credit is applied to balance when you book our services
-            </Typography>
-          </Box>
-        )}
       </CardContent>
     </Card>
   );

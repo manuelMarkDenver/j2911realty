@@ -19,11 +19,11 @@ const About = ({ aboutImagePath }: AboutProps) => {
       <Grid container>
         <Grid
           xs={12}
-          md={5}
+          md={6}
           sx={{
             display: "flex",
             alignItems: "start",
-            backgroundColor: "#F7D2CC",
+            backgroundColor: "#ffe9e6",
           }}
         >
           <Stack spacing={4} textAlign="left" px={10} py={10}>
@@ -67,7 +67,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
         </Grid>
         <Grid
           xs={12}
-          md={7}
+          md={6}
           sx={{
             display: "flex",
             justifyContent: "center",

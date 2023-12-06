@@ -7,6 +7,11 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import CreateIcon from "@mui/icons-material/Create";
 import HomeIcon from "@mui/icons-material/Home";
 
+const iconStyle = {
+  fontSize: "5rem",
+  color: "#a47180",
+};
+
 type ProcessProps = {
   title: string;
   steps: string[];
@@ -20,7 +25,7 @@ const processes: ProcessProps[] = [
       "Book your 1-2 Hour In Person Consult",
       "Every space is a fresh opportunity for creativity. Schedule your consultation today and let’s discuss your vision and bring it to life.",
     ],
-    icon: <EventAvailableIcon sx={{ fontSize: "5rem" }} />,
+    icon: <EventAvailableIcon sx={{ ...iconStyle }} />,
   },
   {
     title: "Step 2: Designing Dreams Together",
@@ -28,7 +33,7 @@ const processes: ProcessProps[] = [
       "We will develop your initial schematic designs together. Then, we will provide you with a budget that makes sense for you.",
       "Next, we design your palette, by creating the vision, by setting the stage, by giving you a glimpse of colors and much more, you’re seeing what your interiors will look like, and equally important, what they’ll feel like.",
     ],
-    icon: <CreateIcon sx={{ fontSize: "5rem" }} />,
+    icon: <CreateIcon sx={{ ...iconStyle }} />,
   },
   {
     title: "Step 3: A New Beginning, Simply Yours",
@@ -36,7 +41,7 @@ const processes: ProcessProps[] = [
       "Last, We’ve got everything in our warehouse, inspected, organized, and ready for installation. We take care of all the big heavy lifting",
       "Our goal is to  meet your every need so that you can simply walk in and live your life. And your lifestyle!",
     ],
-    icon: <HomeIcon sx={{ fontSize: "5rem" }} />,
+    icon: <HomeIcon sx={{ ...iconStyle }} />,
   },
 ];
 

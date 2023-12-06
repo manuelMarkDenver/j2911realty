@@ -100,13 +100,22 @@ export default function Navbar(props: Props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText
-                primary={item.text}
-                sx={{
-                  color: "#a4727e",
-                }}
-              />
+            <ListItemButton>
+              <Link
+                href={item.path}
+                key={item?.text}
+                style={{ textDecoration: "none" }}
+              >
+                <Button
+                  sx={{
+                    color: "#a4727e",
+                    fontSize: "0.8rem",
+                    fontWeight: "300",
+                  }}
+                >
+                  {item?.text}
+                </Button>
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -223,7 +232,11 @@ export default function Navbar(props: Props) {
                 </Stack>
                 <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   {navItems.map((item) => (
-                    <Link href={item.path} key={item?.text}>
+                    <Link
+                      href={item.path}
+                      key={item?.text}
+                      style={{ textDecoration: "none" }}
+                    >
                       <Button
                         sx={{
                           color: "#a4727e",
