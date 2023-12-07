@@ -13,6 +13,15 @@ const customTheme = createTheme({
       default: "#fff", // Replace this with your desired body background color
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 769, // Custom breakpoint at 768px
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   typography: {
     fontFamily: [
       "Cormorant Garamond",

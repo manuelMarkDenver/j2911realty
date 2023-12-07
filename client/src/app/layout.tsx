@@ -32,7 +32,7 @@ export default function RootLayout({
             <CssBaseline />
             <Header />
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </ThemeProvider>
         </ParallaxProvider>
       </body>

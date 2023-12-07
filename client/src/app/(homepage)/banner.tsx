@@ -1,13 +1,10 @@
 "use client";
 import Image from "next/image";
 
-import {
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Typography, styled } from "@mui/material";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 
-import { useIsMobile } from "../lib/helpers";
+import { useBreakpoints, useIsMobile } from "../lib/helpers";
 
 import Link from "next/link";
 import CustomButton from "./components/custom-button";
@@ -32,10 +29,12 @@ const CustomTypography = styled(Typography)({
 const bannerStr = "../../../public/assets/images/banner-img-3.jpg";
 
 const Banner = () => {
-  return (
+  const isMobile = useIsMobile();
+  const { md, mdDown } = useBreakpoints();
+  return md ? (
     <ParallaxBanner
       style={{
-        height: "200vh",
+        height: md ? "200dvh" : "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -54,10 +53,25 @@ const Banner = () => {
           src={banner}
           alt="Background Image"
           fill={true}
-          objectFit="contain"
+          objectFit={md ? "contain" : "cover"}
         />
       </ParallaxBannerLayer>
     </ParallaxBanner>
+  ) : (
+    <Box
+      sx={{
+        position: "relative",
+        height: { xs: "30dvh", sm: "70dvh", md: "200dvh" },
+        width: "100%",
+      }}
+    >
+      <Image
+        src={banner}
+        alt="Background Image"
+        fill={true}
+        objectFit={md ? "contain" : "cover"}
+      />
+    </Box>
   );
 };
 

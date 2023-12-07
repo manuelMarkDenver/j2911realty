@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
-import { useBreakpoints } from "@/app/lib/helpers";
+import { useBreakpoints, useIsMobile } from "@/app/lib/helpers";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -80,6 +80,8 @@ export default function Navbar(props: Props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { lgDown } = useBreakpoints();
 
+  const isMobile = useIsMobile();
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -88,7 +90,7 @@ export default function Navbar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box sx={{ my: 3 }}>
+      <Box sx={{ my: 2 }}>
         <Image
           src="/assets/images/site-logo.png"
           alt="header site logo"
@@ -99,7 +101,7 @@ export default function Navbar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
+          <ListItem key={item.text} disablePadding sx={{ justifyContent: "center" }}>
             <ListItemButton>
               <Link
                 href={item.path}
@@ -137,7 +139,7 @@ export default function Navbar(props: Props) {
             sx={{
               // bgcolor: "#F7D2CC",
               bgcolor: "#fff",
-              py: 5,
+              py: !isMobile ? 5 : 1,
               transition: "background-color 0.3s ease-in-out", // Add transition
             }}
           >
@@ -147,7 +149,7 @@ export default function Navbar(props: Props) {
                 direction="row"
                 justifyContent="space-between"
                 sx={{
-                  display: { sm: "none" },
+                  display: { md: "none" },
                   width: "auto",
                 }}
               >
@@ -163,16 +165,16 @@ export default function Navbar(props: Props) {
                 <Image
                   src="/assets/images/favicon.png"
                   alt="header site logo"
-                  width={70}
-                  height={50}
+                  width={!isMobile ? 70 : 50}
+                  height={!isMobile ? 50 : 40}
                 />
               </Stack>
 
-              {/*  Desktop view */}
+              {/* ! Desktop view */}
 
               <Stack
                 sx={{
-                  display: { xs: "none", sm: "flex" },
+                  display: { xs: "none", md: "flex" },
                   flexGrow: 1,
                   alignItems: "center",
                 }}
@@ -230,7 +232,7 @@ export default function Navbar(props: Props) {
                     </Link>
                   </IconButton>
                 </Stack>
-                <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                <Box sx={{ display: { xs: "none", md: "block" } }}>
                   {navItems.map((item) => (
                     <Link
                       href={item.path}
@@ -264,7 +266,7 @@ export default function Navbar(props: Props) {
                 keepMounted: true, // Better open performance on mobile.
               }}
               sx={{
-                display: { xs: "block", sm: "none" },
+                display: { xs: "block", md: "none" },
                 "& .MuiDrawer-paper": {
                   boxSizing: "border-box",
                   width: drawerWidth,

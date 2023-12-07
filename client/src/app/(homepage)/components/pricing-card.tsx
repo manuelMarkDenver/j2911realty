@@ -17,6 +17,7 @@ import CustomButton from "./custom-button";
 
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+import { useIsMobile } from "@/app/lib/helpers";
 
 const spacingStyle = {
   mb: 5,
@@ -33,6 +34,8 @@ type PricingCardProps = {
 };
 
 const PricingCard = (props: PricingCardProps) => {
+  const isMobile = useIsMobile();
+
   const { process } = props;
   return (
     <Card
@@ -45,8 +48,8 @@ const PricingCard = (props: PricingCardProps) => {
             <Box
               sx={{
                 borderRadius: "50%",
-                width: "150px",
-                height: "150px",
+                width: !isMobile ? "150px" : "60px",
+                height: !isMobile ? "150px" : "60px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -55,15 +58,10 @@ const PricingCard = (props: PricingCardProps) => {
                 bgcolor: "#f7d2cc",
               }}
             >
-              {/* <AssignmentTurnedInIcon
-                sx={{
-                  color: "#FD8C91",
-                  fontSize: "5rem",
-                }}
-              /> */}
               {process?.icon}
             </Box>
             <Typography
+              fontSize={!isMobile ? "1.8rem" : "1.2rem"}
               variant="h4"
               sx={{
                 color: "#a4727e",
@@ -92,12 +90,12 @@ const PricingCard = (props: PricingCardProps) => {
                 alignItems: "start",
               }}
             >
-              <ListItemIcon>
+              <ListItemIcon sx={{ minWidth: !isMobile ? "50px" : "30px" }}>
                 <CheckBoxIcon
                   sx={{
                     color: "#EF9A9A",
                   }}
-                  fontSize="large"
+                  fontSize={!isMobile ? "large" : "small"}
                 />
               </ListItemIcon>
               <ListItemText
@@ -105,18 +103,26 @@ const PricingCard = (props: PricingCardProps) => {
                 primaryTypographyProps={{
                   sx: {
                     color: "#a4727e",
-                    fontWeight: "bold",
+                    fontWeight: "lightbold",
+                    fontSize: !isMobile ? "1.2rem" : "0.7rem",
                   },
+                }}
+                sx={{
+                  marginY: 0,
                 }}
               />
             </ListItem>
           ))}
-          <ListItem>
+          <ListItem sx={{ display: "flex", justifyContent: "center" }}>
             {process?.title === "Step 1: Explore Your Vision" && (
-              <Box textAlign="left">
+              <Box textAlign="center">
                 <Typography
                   variant="body2"
-                  sx={{ color: "gray", fontStyle: "italic" }}
+                  sx={{
+                    color: "gray",
+                    fontStyle: "italic",
+                    fontSize: !isMobile ? "0.9rem" : "0.6rem",
+                  }}
                 >
                   There is a $250 in person consultant fee. A $250 credit is
                   applied to balance when you book our services
