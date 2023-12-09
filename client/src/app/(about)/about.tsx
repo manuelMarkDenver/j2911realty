@@ -21,7 +21,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
   });
 
   return (
-    <Box sx={{ py: !isMobile ? 20 : 10 }} id="about">
+    <Box sx={{ py: !isMobile ? 15 : 10 }} id="about">
       <Grid container>
         <Grid
           xs={12}

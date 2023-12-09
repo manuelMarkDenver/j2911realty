@@ -57,10 +57,11 @@ const Footer = () => {
   return (
     <Box
       id="contact"
-      className={`${
-        !useIsMobile ? "h-screen py-28" : "h-full py-20"
-      } flex items-center justify-center`}
-      sx={{ backgroundColor: "EF9A9A", color: "black" }}
+      sx={{
+        backgroundColor: "EF9A9A",
+        color: "black",
+        py: !isMobile ? 15 : 10,
+      }}
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
