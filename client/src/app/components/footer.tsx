@@ -50,6 +50,8 @@ const StyledButton = styled(Button)({
 });
 
 const Footer = () => {
+  const isMobile = useIsMobile();
+
   const iconColor = "#a4727e";
 
   return (
@@ -63,25 +65,28 @@ const Footer = () => {
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
           <CustomGridItem item xs={12} md={6}>
-            <Stack gap={1}>
+            <Stack gap={1} alignItems="center">
               <Image
                 src="/assets/images/site-logo.png"
                 alt="site logo"
-                width={600}
-                height={120}
+                width={!isMobile ? 600 : 200}
+                height={!isMobile ? 120 : 40}
               />
-              <Typography className="text-slate-700" sx={{ fontSize: "1.5rem" }}>
+              <Typography
+                className="text-slate-700"
+                sx={{ fontSize: !isMobile ? "1.5rem" : "0.9rem" }}
+              >
                 {constants?.CONTACT_NUMBER}
               </Typography>
               <a
                 href="mailto:test@j2911realty.com"
-                style={{ textDecoration: "none", }}
+                style={{ textDecoration: "none" }}
               >
                 <Typography
                   className="text-slate-700 italic"
                   sx={{
                     textDecoration: "none",
-                    fontSize: "1.5rem",
+                    fontSize: !isMobile ? "1.5rem" : "0.9rem",
                     "&:hover": {
                       cursor: "pointer",
                     },
@@ -90,18 +95,27 @@ const Footer = () => {
                   {constants?.EMAIL}
                 </Typography>
               </a>
-              <Stack direction="row" spacing={1} justifyContent="center">
+              <Stack
+                direction="row"
+                spacing={1}
+                justifyContent="center"
+                alignItems="center"
+              >
                 <IconButton sx={{ paddingLeft: 0 }}>
                   <Link
                     href={constants?.FB_ACCOUNT}
                     style={{ color: iconColor }}
                   >
-                    <FacebookIcon />
+                    <FacebookIcon
+                      sx={{ fontSize: !isMobile ? "1.5rem" : "1rem" }}
+                    />
                   </Link>
                 </IconButton>
                 <IconButton>
                   <Link href={constants?.FB_PAGE} style={{ color: iconColor }}>
-                    <FacebookIcon />
+                    <FacebookIcon
+                      sx={{ fontSize: !isMobile ? "1.5rem" : "1rem" }}
+                    />
                   </Link>
                 </IconButton>
                 <IconButton>
@@ -109,7 +123,9 @@ const Footer = () => {
                     href={constants?.IG_ACCOUNT}
                     style={{ color: iconColor }}
                   >
-                    <InstagramIcon />
+                    <InstagramIcon
+                      sx={{ fontSize: !isMobile ? "1.5rem" : "1rem" }}
+                    />
                   </Link>
                 </IconButton>
                 <IconButton>
@@ -120,14 +136,15 @@ const Footer = () => {
                     <Image
                       src="/assets/images/airbnb-logo-dark.png"
                       alt="Airbnb Logo"
-                      width={20}
-                      height={20}
+                      width={!isMobile ? 20 : 14}
+                      height={!isMobile ? 20 : 14}
                     />
                   </Link>
                 </IconButton>
               </Stack>
             </Stack>
           </CustomGridItem>
+
           <CustomGridItem item xs={12} md={6}>
             <Stack gap={2}>
               <Button
@@ -140,7 +157,14 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-700">Home</Typography>
+                <Typography
+                  sx={{
+                    fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                  }}
+                  className="text-slate-700"
+                >
+                  Home
+                </Typography>
               </Button>
               <Button
                 variant="text"
@@ -152,7 +176,14 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-700">About Us</Typography>
+                <Typography
+                  sx={{
+                    fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                  }}
+                  className="text-slate-700"
+                >
+                  About Us
+                </Typography>
               </Button>
               <Button
                 variant="text"
@@ -164,7 +195,14 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-700">Projects</Typography>
+                <Typography
+                  sx={{
+                    fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                  }}
+                  className="text-slate-700"
+                >
+                  Projects
+                </Typography>
               </Button>
               <Button
                 variant="text"
@@ -177,7 +215,14 @@ const Footer = () => {
                 }}
               >
                 <a href="#contact">
-                  <Typography className="text-slate-700">Contact Us</Typography>
+                  <Typography
+                    sx={{
+                      fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                    }}
+                    className="text-slate-700"
+                  >
+                    Contact Us
+                  </Typography>
                 </a>
               </Button>
             </Stack>

@@ -99,9 +99,40 @@ export default function Navbar(props: Props) {
         />
       </Box>
       <Divider />
+      <Stack direction="row" spacing={1} justifyContent="center">
+        <IconButton sx={{ paddingLeft: 0 }}>
+          <Link href={constants?.FB_ACCOUNT} style={{ color: iconColor }}>
+            <FacebookIcon sx={{ fontSize: "1rem" }} />
+          </Link>
+        </IconButton>
+        <IconButton>
+          <Link href={constants?.FB_PAGE} style={{ color: iconColor }}>
+            <FacebookIcon sx={{ fontSize: "1rem" }} />
+          </Link>
+        </IconButton>
+        <IconButton>
+          <Link href={constants?.IG_ACCOUNT} style={{ color: iconColor }}>
+            <InstagramIcon sx={{ fontSize: "1rem" }} />
+          </Link>
+        </IconButton>
+        <IconButton>
+          <Link href={constants?.AIRBNB_ACCOUNT} style={{ color: iconColor }}>
+            <Image
+              src="/assets/images/airbnb-logo-dark.png"
+              alt="Airbnb Logo"
+              width={14}
+              height={14}
+            />
+          </Link>
+        </IconButton>
+      </Stack>
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.text} disablePadding sx={{ justifyContent: "center" }}>
+          <ListItem
+            key={item.text}
+            disablePadding
+            sx={{ justifyContent: "center" }}
+          >
             <ListItemButton>
               <Link
                 href={item.path}
@@ -143,11 +174,12 @@ export default function Navbar(props: Props) {
               transition: "background-color 0.3s ease-in-out", // Add transition
             }}
           >
+            {/* Hamburger icon for mobile */}
             <Toolbar>
-              {/* icon for mobile */}
               <Stack
                 direction="row"
                 justifyContent="space-between"
+                alignItems="center"
                 sx={{
                   display: { md: "none" },
                   width: "auto",
@@ -158,15 +190,14 @@ export default function Navbar(props: Props) {
                   aria-label="open drawer"
                   edge="start"
                   onClick={handleDrawerToggle}
-                  sx={{ mr: 2 }}
                 >
                   <MenuIcon />
                 </IconButton>
                 <Image
-                  src="/assets/images/favicon.png"
+                  src="/assets/images/site-logo.png"
                   alt="header site logo"
-                  width={!isMobile ? 70 : 50}
-                  height={!isMobile ? 50 : 40}
+                  width={160}
+                  height={30}
                 />
               </Stack>
 

@@ -54,7 +54,6 @@ const typographyStyles = {
 // };
 
 const OurServicesMobile = () => {
-  const isMobile = useIsMobile();
 
   return (
     <Grid container my={5}>

@@ -5,10 +5,7 @@ import { useBreakpoints, useIsMobile } from "../lib/helpers";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import Image from "next/image";
 
-const CustomTypography = styled(Typography)({
-  fontSize: "0.9rem",
-  color: "#9a9a9a",
-});
+
 
 type AboutProps = {
   aboutImagePath?: string;
@@ -18,10 +15,10 @@ const About = ({ aboutImagePath }: AboutProps) => {
   const isMobile = useIsMobile();
 
   const { xsDown, md, lg, rangeXsSm, rangeSmMd } = useBreakpoints();
-  console.log("🚀 ~ file: about.tsx:21 ~ About ~ xsDown:", xsDown);
-  console.log("🚀 ~ file: about.tsx:21 ~ About ~ rangeSmMd:", rangeSmMd);
-  console.log("🚀 ~ file: about.tsx:21 ~ About ~ rangeXsSm:", rangeXsSm);
-  console.log("🚀 ~ file: about.tsx:21 ~ About ~ md:", md);
+  const CustomTypography = styled(Typography)({
+    fontSize: !isMobile ? "1.5rem" : "0.9rem",
+    color: "#9a9a9a",
+  });
 
   return (
     <Box sx={{ py: !isMobile ? 20 : 10 }} id="about">
