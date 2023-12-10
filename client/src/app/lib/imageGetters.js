@@ -4,7 +4,6 @@ const fs = require("fs");
 const path = require("path");
 
 const getImagesFiles = (folderpath) => {
-  console.log("🚀 ~ file: imageGetters.js:7 ~ getImagesFiles ~ folderpath:", folderpath)
   // const folderPath = `../../../public/assets/images/designs/${folderpath}/`; // Replace with the actual folder path
 
   const folderPath = path.join(

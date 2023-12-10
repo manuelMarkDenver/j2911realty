@@ -9,6 +9,8 @@ import { Box, Container, Typography } from "@mui/material";
 import { useIsMobile } from "@/app/lib/helpers";
 
 const ImageCarousel = ({ allImages }: { allImages: any }) => {
+  const isMobile = useIsMobile();
+
   const [sliderRef] = useKeenSlider({
     mode: "snap",
     slides: {
@@ -25,7 +27,11 @@ const ImageCarousel = ({ allImages }: { allImages: any }) => {
     <Box
       ref={sliderRef}
       className="keen-slider"
-      sx={{ position: "relative", width: "100%", height: "100%" }}
+      sx={{
+        position: "relative",
+        width: !isMobile ? "100%" : "auto",
+        height: !isMobile ? "100%" : "auto",
+      }}
     >
       {allImages?.allImages.map((image: string, index: number) => {
         return (
@@ -33,8 +39,8 @@ const ImageCarousel = ({ allImages }: { allImages: any }) => {
             key={index}
             src={image}
             alt={image}
-            width={2000}
-            height={1300}
+            width={!isMobile ? 2000 : 300}
+            height={!isMobile ? 1300 : 300}
             // fill={true}
             style={{ objectFit: "contain" }}
             className="keen-slider__slide"

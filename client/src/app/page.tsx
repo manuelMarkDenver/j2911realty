@@ -7,6 +7,7 @@ import About from "./(about)/about";
 import Steps from "./(homepage)/steps";
 import Projects2 from "./(homepage)/projects-2";
 import OurServicesContainer from "./(homepage)/our-services-container";
+import ImageCarouselContainer from "./(homepage)/ImagesCarouselContainer/image-carousel-container";
 
 export const metadata: Metadata = {
   title: "J2911 Realty",
@@ -25,7 +26,7 @@ export default function Home() {
 
       <Projects2 itemData={masonryImages} />
 
-      {/* <ImageCarouselContainer allImages={masonryImages} /> */}
+      <ImageCarouselContainer allImages={masonryImages} />
 
       <OurServicesContainer />
 

@@ -71,7 +71,11 @@ const navItems = [
   },
   {
     text: "Book A Consultation",
-    path: "#contact",
+    path: "https://calendly.com/j2911realty",
+  },
+  {
+    text: "Contact Me",
+    path: "/#contact",
   },
 ];
 
@@ -138,6 +142,9 @@ export default function Navbar(props: Props) {
                 href={item.path}
                 key={item?.text}
                 style={{ textDecoration: "none" }}
+                target={
+                  item.text === "Book A Consultation" ? "_blank" : "_parent"
+                }
               >
                 <Button
                   sx={{
@@ -269,6 +276,11 @@ export default function Navbar(props: Props) {
                       href={item.path}
                       key={item?.text}
                       style={{ textDecoration: "none" }}
+                      target={
+                        item.text === "Book A Consultation"
+                          ? "_blank"
+                          : "_parent"
+                      }
                     >
                       <Button
                         sx={{

@@ -215,7 +215,32 @@ const Footer = () => {
                   },
                 }}
               >
-                <a href="#contact">
+                <Link
+                  href="https://calendly.com/j2911realty"
+                  style={{ textDecoration: "none" }}
+                  target="_blank"
+                >
+                  <Typography
+                    sx={{
+                      fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                    }}
+                    className="text-slate-700"
+                  >
+                    Book A Consultation
+                  </Typography>
+                </Link>
+              </Button>
+              <Button
+                variant="text"
+                className="text-slate-700"
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                    opacity: "0.8",
+                  },
+                }}
+              >
+                <a href="#contact" style={{ textDecoration: "none" }}>
                   <Typography
                     sx={{
                       fontSize: !isMobile ? "1.5rem" : "0.8rem",
