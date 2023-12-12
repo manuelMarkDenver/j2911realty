@@ -68,7 +68,7 @@ const OurServicesMobile = () => {
         <Box position="relative" width={80} height={80} sx={{ mb: 2 }}>
           <Image
             src={logo}
-            alt="Background Image"
+            alt="Logo on Mobile"
             fill={true}
             objectFit="contain"
           />
@@ -90,7 +90,7 @@ const OurServicesMobile = () => {
           </Typography>
           <br />
           <Typography variant="h5" sx={{ ...typographyStyles }}>
-            Your interior designer can give your home a new life by curating a
+            Your interior designer can give your space a new life by curating a
             style that offers style but fits your personality and the character
             of your home perfectly. <br />
             <br />

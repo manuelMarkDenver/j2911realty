@@ -73,10 +73,6 @@ const navItems = [
     text: "Book A Consultation",
     path: "https://calendly.com/j2911realty",
   },
-  {
-    text: "Contact Me",
-    path: "/#contact",
-  },
 ];
 
 export default function Navbar(props: Props) {
@@ -203,8 +199,8 @@ export default function Navbar(props: Props) {
                 <Image
                   src="/assets/images/site-logo.png"
                   alt="header site logo"
-                  width={160}
-                  height={30}
+                  width={250}
+                  height={50}
                 />
               </Stack>
 

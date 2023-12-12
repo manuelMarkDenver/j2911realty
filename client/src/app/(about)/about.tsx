@@ -46,9 +46,9 @@ const About = ({ aboutImagePath }: AboutProps) => {
               About Me
             </Typography>
             <CustomTypography variant="h5">
-              I am the CEO and principal designer for J.2911 Realty and
-              committed to giving you the best quality designs while sticking to
-              your budget.
+              I am the CEO and principal designer for Designs by Her and J.2911
+              Realty and committed to giving you the best quality designs while
+              sticking to your budget.
             </CustomTypography>
             <CustomTypography variant="h5">
               I have practical experience in inhabitant upgrades and providing
@@ -65,7 +65,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
               clients, guaranteed timely delivery and full satisfaction.
             </CustomTypography>
             <CustomTypography variant="h5">
-              I look forwarding to working with you,
+              I look forward to working with you,
             </CustomTypography>
             {!isMobile && (
               <>

@@ -230,27 +230,6 @@ const Footer = () => {
                   </Typography>
                 </Link>
               </Button>
-              <Button
-                variant="text"
-                className="text-slate-700"
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "transparent",
-                    opacity: "0.8",
-                  },
-                }}
-              >
-                <a href="#contact" style={{ textDecoration: "none" }}>
-                  <Typography
-                    sx={{
-                      fontSize: !isMobile ? "1.5rem" : "0.8rem",
-                    }}
-                    className="text-slate-700"
-                  >
-                    Contact Us
-                  </Typography>
-                </a>
-              </Button>
             </Stack>
           </CustomGridItem>
           {/* <CustomGridItem item xs={12} md={4}>
