@@ -66,7 +66,7 @@ const ImageCarouselContainer = (allImages: any) => {
             fontSize: !isMobile ? "2rem" : "1rem",
           }}
         >
-          Scroll to see more projects
+          Scroll to the left see more projects
         </Typography>
       </Stack>
     </>
