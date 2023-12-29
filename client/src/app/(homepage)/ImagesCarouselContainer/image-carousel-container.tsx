@@ -47,7 +47,7 @@ const ImageCarouselContainer = (allImages: any) => {
 
         <ImageCarousel allImages={allImages} />
       </Box>
-      <Stack
+      {/* <Stack
         direction="row"
         alignItems="center"
         gap={5}
@@ -68,7 +68,7 @@ const ImageCarouselContainer = (allImages: any) => {
         >
           Scroll to the left see more projects
         </Typography>
-      </Stack>
+      </Stack> */}
     </>
   );
 };

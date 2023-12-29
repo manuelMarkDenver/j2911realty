@@ -26,8 +26,8 @@ const Steps = () => {
     {
       title: "Step 1: Explore Your Vision",
       steps: [
-        "Book your 1-2 Hour In Person Consult",
-        "Every space is a fresh opportunity for creativity. Schedule your consultation today and let’s discuss your vision and bring it to life.",
+        "Book your FREE 15-minute consultation here",
+        "Every space is a fresh opportunity to create comfort while also adding style. Let’s chat today and discuss your vision and bring it to life.",
       ],
       icon: <EventAvailableIcon sx={{ ...iconStyle }} />,
     },

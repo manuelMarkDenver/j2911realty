@@ -124,8 +124,8 @@ const PricingCard = (props: PricingCardProps) => {
                     fontSize: !isMobile ? "0.9rem" : "0.6rem",
                   }}
                 >
-                  There is a $250 in person consultant fee. A $250 credit is
-                  applied to balance when you book our services
+                  There is a $250 1 hour in person consultant fee. A $250 credit
+                  is applied to balance when you book our services
                 </Typography>
               </Box>
             )}

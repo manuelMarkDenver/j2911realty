@@ -21,7 +21,7 @@ const About = ({ aboutImagePath }: AboutProps) => {
   });
 
   return (
-    <Box sx={{ py: !isMobile ? 15 : 10 }} id="about">
+    <Box sx={{ py: isMobile ? 5 : 0 }} id="about">
       <Grid container>
         <Grid
           xs={12}
@@ -51,9 +51,9 @@ const About = ({ aboutImagePath }: AboutProps) => {
               sticking to your budget.
             </CustomTypography>
             <CustomTypography variant="h5">
-              I have practical experience in inhabitant upgrades and providing
-              stunning transformations. I truly enjoy working with clients and
-              bringing your vision into reality.
+              I have experience in residential upgrades and stunning
+              transformations. I truly enjoy working with clients and bringing
+              your vision into reality.
             </CustomTypography>
             <CustomTypography variant="h5">
               I understand the importance of how your space looks and feels
