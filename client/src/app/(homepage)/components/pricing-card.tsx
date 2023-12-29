@@ -51,7 +51,7 @@ const customText = () => {
       >
         Book your FREE 15-minute consultation
         <Link
-          href="https://calendly.com/j2911realty/consultation"
+          href="https://calendly.com/j2911realty"
           style={{ textDecoration: "none" }}
         >
           {" "}

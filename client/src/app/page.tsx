@@ -40,7 +40,7 @@ export default function Home() {
         <CustomButton
           title="Book Your Consultation"
           sx={{ py: "20px", px: "20px", width: "50%" }}
-          link="https://calendly.com/j2911realty/consultation"
+          link="https://calendly.com/j2911realty"
         />
       </Container>
 
