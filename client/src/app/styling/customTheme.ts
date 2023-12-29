@@ -10,12 +10,21 @@ const customTheme = createTheme({
       main: "#F8F9F4",
     },
     background: {
-      default: "#E4E1DD", // Replace this with your desired body background color
+      default: "#fff", // Replace this with your desired body background color
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 769, // Custom breakpoint at 768px
+      lg: 1280,
+      xl: 1920,
     },
   },
   typography: {
     fontFamily: [
-      "Times New Roman",
+      "Cormorant Garamond",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',

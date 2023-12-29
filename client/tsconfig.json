@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "allowImportingTsExtensions": true,
+    "target": "es2015",
+    "downlevelIteration": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -24,9 +22,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
   "include": [
@@ -35,8 +31,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "_static/types/**/*.ts"
-  ],
+, "src/app/lib/imageGetters.js"  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  
 }

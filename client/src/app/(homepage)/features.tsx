@@ -1,85 +1,129 @@
 "use client";
-
-import { Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Icon, Paper, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import FeaturesCard from "../components/features-card";
-import { useIsMobile } from "../lib/helpers";
+import { useBreakpoints, useIsMobile } from "../lib/helpers";
+import WovenImageList from "../(designs)/components/woven-image-list";
+import styled from "@emotion/styled";
 
+// icons
+import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
+import GridOnIcon from "@mui/icons-material/GridOn";
+import StarsIcon from "@mui/icons-material/Stars";
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
+
+const typographyStyles = {
+  fontSize: { xs: "2.2rem", md: "3rem" },
+  letterSpacing: "1.2px",
+};
+
+const CustomChildGridStyles = styled(Grid)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "180px",
+  color: "black",
+  "&:not(:last-child)": {
+    borderRight: "solid 1px black",
+  },
+});
+
+const CustomIconStyles = {
+  fontSize: "3rem",
+  marginBottom: "10px",
+  color: "gray",
+};
 const Features = () => {
+  const { xs, sm, md, lg, xl } = useBreakpoints();
+
   return (
-    <Container
-      className={`${!useIsMobile ? "h-screen py-28" : "h-full py-20"}`}
-    >
-      <Stack className="text-center" sx={{ marginBottom: "100px" }}>
-        <Typography
-          component="h5"
-          variant="h5"
-          sx={{ fontWeight: "semi-bold" }}
-        >
-          Merging comfort and style seamlessly for a refined living experience.
-        </Typography>
-        <Typography
-          component="h3"
+    <Box sx={{ position: "relative" }}>
+      <Container
+        maxWidth={xs ? "lg" : "md"}
+        sx={{
+          position: "absolute",
+          top: "0%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+        disableGutters
+      >
+        <Paper
+          elevation={7}
           sx={{
-            fontSize: { xs: "2.2rem", md: "4rem" },
+            borderRadius: "20px",
+            backgroundColor: "pink",
           }}
         >
-          Cozy <span className="italic">comfort</span>, Elegance{" "}
-          <span className="italic">redefined</span> <br />& Timeless{" "}
-          <span className="italic">beauty</span>
-        </Typography>
-        <Typography variant="h6">
-          We believe your space should make sense. We thrive in taking homes
-          <br />
-          and accenting their natural beauty while bringing together modern
-          design and convenience.
-        </Typography>
-      </Stack>
-      <Grid
-        container
-        gap={useIsMobile() ? 2 : 0}
+          <Grid container>
+            <CustomChildGridStyles xs={3}>
+              <Icon component={EmojiObjectsIcon} sx={{ ...CustomIconStyles }} />
+              Tailored Design Solutions
+            </CustomChildGridStyles>
+            <CustomChildGridStyles xs={3}>
+              <Icon component={GridOnIcon} sx={{ ...CustomIconStyles }} />
+              Optimized Spatial Arrangements
+            </CustomChildGridStyles>
+            <CustomChildGridStyles xs={3}>
+              <Icon component={StarsIcon} sx={{ ...CustomIconStyles }} />
+              High-grade Interior Designers
+            </CustomChildGridStyles>
+            <CustomChildGridStyles xs={3}>
+              <Icon
+                component={AssignmentTurnedInIcon}
+                sx={{ ...CustomIconStyles }}
+              />
+              Seamless Project Execution
+            </CustomChildGridStyles>
+          </Grid>
+        </Paper>
+      </Container>
+
+      <Container
+        id="projects"
         sx={{
+          height: "70vh",
+          display: "flex",
           justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <Grid
-          xs={12}
-          md={4}
-          className="md:flex md:justify-center md:items-center"
+        <Stack
+          className="text-center"
+          sx={{
+            marginBottom: "100px",
+          }}
         >
-          <FeaturesCard
-            img="/assets/images/features/feature-img-1.jpg"
-            title="Kitchen Designs"
-            description="Sleek, modern chef's dream, granite countertops."
-            link="/designs/kitchen-designs"
-          />
-        </Grid>
-        <Grid
-          xs={12}
-          md={4}
-          className="md:flex md:justify-center md:items-center"
-        >
-          <FeaturesCard
-            img="/assets/images/features/feature-img-2.jpg"
-            title="Living Room Designs"
-            description="Elegant comfort, inviting fireplace, open space."
-            link="/designs/livingroom-designs"
-          />
-        </Grid>
-        <Grid
-          xs={12}
-          md={4}
-          className="md:flex md:justify-center md:items-center"
-        >
-          <FeaturesCard
-            img="/assets/images/features/feature-img-3.jpg"
-            title="Bedroom Designs"
-            description="Tranquil oasis, plush luxury, serene retreat."
-            link="/designs/bedroom-designs"
-          />
-        </Grid>
-      </Grid>
-    </Container>
+          <Typography {...typographyStyles}>
+            <span className="font-thin text-gray-600">Elegance</span>{" "}
+            <span className={`font-medium tracking-wider font-great-vibes`}>
+              Redefined,
+            </span>
+          </Typography>
+          <Typography {...typographyStyles}>
+            <span className="font-thin text-gray-600">Timeless</span>{" "}
+            <span className={`font-medium tracking-wider font-great-vibes`}>
+              Beauty,
+            </span>
+          </Typography>
+          <Typography {...typographyStyles} mb={3}>
+            <span className="font-thin text-gray-600">&</span>{" "}
+            <span className="font-thin text-gray-600">Our</span>{" "}
+            <span className={`font-medium tracking-wider font-great-vibes`}>
+              Approach
+            </span>
+          </Typography>
+          <Typography variant="h5">
+            We believe your space should make sense. We thrive in taking homes
+            and accenting their natural beauty
+            <br /> while bringing together modern design and convenience.
+            <br />
+            All tailored to your budget!
+          </Typography>
+        </Stack>
+      </Container>
+    </Box>
   );
 };
 

@@ -22,28 +22,19 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useIsMobile } from "../lib/helpers";
-
-// const customFontFamily = ["Times New Roman", "Sans serif"];
-
-// const CustomTypography = styled(Typography)({
-//   fontFamily: customFontFamily,
-// });
-
-// const CustomTextField = styled(TextField)({
-//   fontFamily: customFontFamily,
-// });
+import constants from "../lib/contants";
+import Link from "next/link";
 
 const CustomGridItem: any = styled(Grid)({
   display: "flex",
   alignItems: "start",
   justifyContent: "center",
   width: "100%",
-  margin: "auto 0",
 });
 
 const StyledTextareaAutosize = styled(TextareaAutosize)({
   padding: "10px 5px",
-  backgroundColor: "#E4E1DD",
+  backgroundColor: "white",
   width: "100%",
   border: "solid 1px black",
   borderRadius: "7px",
@@ -53,64 +44,109 @@ const StyledTextareaAutosize = styled(TextareaAutosize)({
 const StyledButton = styled(Button)({
   color: "black",
   "&:hover": {
-    backgroundColor: "#334155",
-    color: "white",
+    backgroundColor: "#F8F9F4",
+    color: "black",
   },
 });
 
 const Footer = () => {
+  const isMobile = useIsMobile();
+
+  const iconColor = "#a4727e";
+
   return (
     <Box
-      className={`${
-        !useIsMobile ? "h-screen py-28" : "h-full py-20"
-      } flex items-center justify-center`}
-      sx={{ backgroundColor: "#bdb9b3" }}
+      id="contact"
+      sx={{
+        backgroundColor: "EF9A9A",
+        color: "black",
+        py: !isMobile ? 15 : 10,
+      }}
     >
       <Container maxWidth="xl">
         <Grid container sx={{ flexGrow: 1, textAlign: "center" }}>
-          <CustomGridItem item xs={12} md={4}>
-            <Stack gap={1}>
+          <CustomGridItem item xs={12} md={6}>
+            <Stack gap={1} alignItems="center">
               <Image
-                src="/assets/images/site-logo.png"
+                src="/assets/images/new-logo.png"
                 alt="site logo"
-                width={240}
-                height={150}
+                width={!isMobile ? 600 : 200}
+                height={!isMobile ? 120 : 40}
               />
-              <Typography variant="h6" className="text-slate-100">
-                J2911 Realty
+              <Typography
+                className="text-slate-700"
+                sx={{ fontSize: !isMobile ? "1.5rem" : "0.9rem" }}
+              >
+                {constants?.CONTACT_NUMBER}
               </Typography>
-              <Typography className="text-slate-100">
-                Kulas Light, Apt. 556
-              </Typography>
-              <Typography className="text-slate-100">Gwenborough</Typography>
-              <Typography className="text-slate-100">92998-3874</Typography>
-              <a href="mailto:test@j2911realty.com">
+              <a
+                href="mailto:test@j2911realty.com"
+                style={{ textDecoration: "none" }}
+              >
                 <Typography
-                  className="text-blue-800 italic"
+                  className="text-slate-700 italic"
                   sx={{
                     textDecoration: "none",
+                    fontSize: !isMobile ? "1.5rem" : "0.9rem",
                     "&:hover": {
                       cursor: "pointer",
                     },
                   }}
                 >
-                  test@j2911realty.com
+                  {constants?.EMAIL}
                 </Typography>
               </a>
-              <Stack direction="row" justifyContent="center">
-                <IconButton>
-                  <FacebookIcon />
+              <Stack
+                direction="row"
+                spacing={1}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <IconButton sx={{ paddingLeft: 0 }}>
+                  <Link
+                    href={constants?.FB_ACCOUNT}
+                    style={{ color: iconColor }}
+                  >
+                    <FacebookIcon
+                      sx={{ fontSize: !isMobile ? "1.5rem" : "1rem" }}
+                    />
+                  </Link>
                 </IconButton>
                 <IconButton>
-                  <InstagramIcon />
+                  <Link href={constants?.FB_PAGE} style={{ color: iconColor }}>
+                    <FacebookIcon
+                      sx={{ fontSize: !isMobile ? "1.5rem" : "1rem" }}
+                    />
+                  </Link>
                 </IconButton>
                 <IconButton>
-                  <TwitterIcon />
+                  <Link
+                    href={constants?.IG_ACCOUNT}
+                    style={{ color: iconColor }}
+                  >
+                    <InstagramIcon
+                      sx={{ fontSize: !isMobile ? "1.5rem" : "1rem" }}
+                    />
+                  </Link>
+                </IconButton>
+                <IconButton>
+                  <Link
+                    href={constants?.AIRBNB_ACCOUNT}
+                    style={{ color: iconColor }}
+                  >
+                    <Image
+                      src="/assets/images/airbnb-logo-dark.png"
+                      alt="Airbnb Logo"
+                      width={!isMobile ? 20 : 14}
+                      height={!isMobile ? 20 : 14}
+                    />
+                  </Link>
                 </IconButton>
               </Stack>
             </Stack>
           </CustomGridItem>
-          <CustomGridItem item xs={12} md={4}>
+
+          <CustomGridItem item xs={12} md={6}>
             <Stack gap={2}>
               <Button
                 variant="text"
@@ -122,7 +158,14 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">Home</Typography>
+                <Typography
+                  sx={{
+                    fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                  }}
+                  className="text-slate-700"
+                >
+                  Home
+                </Typography>
               </Button>
               <Button
                 variant="text"
@@ -134,7 +177,14 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">About Us</Typography>
+                <Typography
+                  sx={{
+                    fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                  }}
+                  className="text-slate-700"
+                >
+                  About Us
+                </Typography>
               </Button>
               <Button
                 variant="text"
@@ -146,7 +196,14 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">Pricing</Typography>
+                <Typography
+                  sx={{
+                    fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                  }}
+                  className="text-slate-700"
+                >
+                  Projects
+                </Typography>
               </Button>
               <Button
                 variant="text"
@@ -158,25 +215,37 @@ const Footer = () => {
                   },
                 }}
               >
-                <Typography className="text-slate-100">Contact Us</Typography>
+                <Link
+                  href="https://calendly.com/j2911realty"
+                  style={{ textDecoration: "none" }}
+                  target="_blank"
+                >
+                  <Typography
+                    sx={{
+                      fontSize: !isMobile ? "1.5rem" : "0.8rem",
+                    }}
+                    className="text-slate-700"
+                  >
+                    Book A Consultation
+                  </Typography>
+                </Link>
               </Button>
             </Stack>
           </CustomGridItem>
-          <CustomGridItem item xs={12} md={4}>
+          {/* <CustomGridItem item xs={12} md={4}>
             <Stack direction="column" sx={{ width: "100%" }}>
               <Typography
                 sx={{ marginBottom: "30px" }}
                 align="left"
-                className="text-slate-100"
+                className="text-slate-700"
+                variant="h6"
               >
-                Send us a message.
+                Feel free to send us a message @ blhernandez0923@gmail.com
               </Typography>
               <Stack gap={2}>
                 <TextField
-                  sx={{
-                    backgroundColor: "white",
-                    color: "white"
-                  }}
+                  color="info"
+                  sx={{ background: "white" }}
                   id="input-with-icon-textfield"
                   label="Name"
                   InputProps={{
@@ -189,9 +258,8 @@ const Footer = () => {
                   variant="filled"
                 />
                 <TextField
-                  sx={{
-                    backgroundColor: "white"
-                  }}
+                  color="info"
+                  sx={{ background: "white" }}
                   id="input-with-icon-textfield"
                   label="Email"
                   InputProps={{
@@ -209,7 +277,7 @@ const Footer = () => {
                 <Typography>Send</Typography>
               </StyledButton>
             </Stack>
-          </CustomGridItem>
+          </CustomGridItem> */}
         </Grid>
       </Container>
     </Box>
