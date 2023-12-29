@@ -23,15 +23,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-      {/* <Features /> */}
-      {/* <WovenImageList itemData={masonryImages} /> */}
-
       <Projects2 itemData={masonryImages} />
-
       <ImageCarouselContainer allImages={masonryImages} />
-
       <OurServicesContainer />
-
       <Steps />
 
       <Container
@@ -40,12 +34,13 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          py: 20,
+          py: 10,
         }}
       >
         <CustomButton
           title="Book Your Consultation"
           sx={{ py: "20px", px: "20px", width: "50%" }}
+          link="https://calendly.com/j2911realty/consultation"
         />
       </Container>
 

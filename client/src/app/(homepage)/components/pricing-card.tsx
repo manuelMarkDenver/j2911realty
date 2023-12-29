@@ -18,6 +18,7 @@ import CustomButton from "./custom-button";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 import { useIsMobile } from "@/app/lib/helpers";
+import Link from "next/link";
 
 const spacingStyle = {
   mb: 5,
@@ -31,6 +32,35 @@ type ProcessProps = {
 
 type PricingCardProps = {
   process: ProcessProps;
+};
+
+const customText = () => {
+  return (
+    <Box>
+      <Typography
+        variant="body2"
+        sx={{
+          margin: "0",
+          fontFamily:
+            'Cormorant Garamond,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+          fontWeight: "400",
+          lineHeight: "1.5",
+          color: "#a4727e",
+          fontSize: "0.7rem",
+        }}
+      >
+        Book your FREE 15-minute consultation
+        <Link
+          href="https://calendly.com/j2911realty/consultation"
+          style={{ textDecoration: "none" }}
+        >
+          {" "}
+          HERE
+        </Link>
+        ,
+      </Typography>
+    </Box>
+  );
 };
 
 const PricingCard = (props: PricingCardProps) => {
@@ -98,19 +128,24 @@ const PricingCard = (props: PricingCardProps) => {
                   fontSize={!isMobile ? "large" : "small"}
                 />
               </ListItemIcon>
-              <ListItemText
-                primary={step}
-                primaryTypographyProps={{
-                  sx: {
-                    color: "#a4727e",
-                    fontWeight: "lightbold",
-                    fontSize: !isMobile ? "1.2rem" : "0.7rem",
-                  },
-                }}
-                sx={{
-                  marginY: 0,
-                }}
-              />
+              {process?.title === "Step 1: Explore Your Vision" &&
+              index === 0 ? (
+                customText()
+              ) : (
+                <ListItemText
+                  primary={step}
+                  primaryTypographyProps={{
+                    sx: {
+                      color: "#a4727e",
+                      fontWeight: "lightbold",
+                      fontSize: !isMobile ? "1.2rem" : "0.7rem",
+                    },
+                  }}
+                  sx={{
+                    marginY: 0,
+                  }}
+                />
+              )}
             </ListItem>
           ))}
           <ListItem sx={{ display: "flex", justifyContent: "center" }}>
