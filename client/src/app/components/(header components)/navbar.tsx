@@ -92,7 +92,7 @@ export default function Navbar(props: Props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Box sx={{ my: 2 }}>
         <Image
-          src="/assets/images/site-logo.png"
+          src="/assets/images/new-logo.png"
           alt="header site logo"
           width={150}
           height={30}
@@ -197,7 +197,7 @@ export default function Navbar(props: Props) {
                   <MenuIcon />
                 </IconButton>
                 <Image
-                  src="/assets/images/site-logo.png"
+                  src="/assets/images/new-logo.png"
                   alt="header site logo"
                   width={250}
                   height={50}
@@ -220,7 +220,7 @@ export default function Navbar(props: Props) {
                     }}
                   >
                     <Image
-                      src="/assets/images/site-logo.png"
+                      src="/assets/images/new-logo.png"
                       alt="header site logo"
                       width={!lgDown ? 450 : 300}
                       height={!lgDown ? 80 : 70}

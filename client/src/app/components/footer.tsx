@@ -68,7 +68,7 @@ const Footer = () => {
           <CustomGridItem item xs={12} md={6}>
             <Stack gap={1} alignItems="center">
               <Image
-                src="/assets/images/site-logo.png"
+                src="/assets/images/new-logo.png"
                 alt="site logo"
                 width={!isMobile ? 600 : 200}
                 height={!isMobile ? 120 : 40}

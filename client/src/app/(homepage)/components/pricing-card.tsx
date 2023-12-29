@@ -34,37 +34,40 @@ type PricingCardProps = {
   process: ProcessProps;
 };
 
-const customText = () => {
-  return (
-    <Box>
-      <Typography
-        variant="body2"
-        sx={{
-          margin: "0",
-          fontFamily:
-            'Cormorant Garamond,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-          fontWeight: "400",
-          lineHeight: "1.5",
-          color: "#a4727e",
-          fontSize: "0.7rem",
-        }}
-      >
-        Book your FREE 15-minute consultation
-        <Link
-          href="https://calendly.com/j2911realty"
-          style={{ textDecoration: "none" }}
-        >
-          {" "}
-          HERE
-        </Link>
-        ,
-      </Typography>
-    </Box>
-  );
-};
-
 const PricingCard = (props: PricingCardProps) => {
   const isMobile = useIsMobile();
+
+  const customText = () => {
+    return (
+      <Box>
+        <Typography
+          variant="body2"
+          sx={{
+            margin: "0",
+            fontFamily:
+              'Cormorant Garamond,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+            fontWeight: "400",
+            lineHeight: "1.5",
+            color: "#a4727e",
+            fontSize: isMobile ? "0.7rem" : "1.2rem",
+          }}
+        >
+          Book your FREE 15-minute consultation{" "}
+          <Link
+            href="https://calendly.com/j2911realty"
+            style={{
+              color: "#a4727e",
+              fontWeight: "bold",
+              fontSize: isMobile ? "0.7rem" : "1.2rem",
+            }}
+          >
+            {" "}
+            HERE
+          </Link>
+        </Typography>
+      </Box>
+    );
+  };
 
   const { process } = props;
   return (

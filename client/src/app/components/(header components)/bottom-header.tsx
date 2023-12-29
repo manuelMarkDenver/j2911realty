@@ -67,7 +67,7 @@ function BottomHeader() {
           >
             <Link href="/">
               <Image
-                src="/assets/images/site-logo.png"
+                src="/assets/images/new-logo.png"
                 alt="header site logo"
                 width={400}
                 height={80}
@@ -94,7 +94,7 @@ function BottomHeader() {
               <MenuIcon />
             </IconButton>
             <Image
-              src="/assets/images/site-logo.png"
+              src="/assets/images/new-logo.png"
               alt="header site logo"
               width={80}
               height={50}
